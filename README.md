@@ -1,4 +1,6 @@
 # ACME Inspection Robot
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+
 ## Authors
 - Diane Ngo (dngo13)
 - Charu Sharma
@@ -6,7 +8,8 @@
 ## Information
 The goal of this project is to simulate a facility room with a boiler, chiller, and air handler. This system provides heating, ventilation, and air conditioning to a building and a robot needs to inspect the pressure readings for all the units and detect if there are any anomalies.
 
-## Dependencies
+## Required Software/Dependencies
+- C++11
 - Ubuntu 18.04
 - ROS Melodic
 - Gazebo, RVIZ
