@@ -17,3 +17,4 @@ The goal of this project is to simulate a facility room with a boiler, chiller, 
 # Phase 1 Deliverables
 - UMLs are in UML/initial/ directory
 - [AIP Document](https://docs.google.com/spreadsheets/d/1DOCv0d4YN2u2S71dpkWC5jOVsrEH4w9d/edit?usp=sharing&ouid=113553065067285094891&rtpof=true&sd=true)
+- [Sprint Planing Notes](https://docs.google.com/document/d/1maDs29Tq0LcT0_IH3nwbV9nM2bu69N_wtKcM96Btzhw/edit?usp=sharing)
