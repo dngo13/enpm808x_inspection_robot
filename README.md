@@ -1,6 +1,6 @@
 # ACME Inspection Robot
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-
+[![Build Status](https://app.travis-ci.com/dngo13/enpm808x_inspection_robot.svg?branch=Phase1_Setup)](https://app.travis-ci.com/dngo13/enpm808x_inspection_robot)
 ## Authors
 - Diane Ngo (dngo13)
 - Charu Sharma
