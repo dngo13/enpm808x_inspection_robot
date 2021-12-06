@@ -47,9 +47,9 @@
 // ROS header files
 #include <ros/ros.h>
 // Class header files
-#include "explorer.hpp"
-#include "grid.hpp"
-#include "map.hpp"
+#include "../include/explorer.hpp"
+#include "../include/grid.hpp"
+#include "../include/map.hpp"
 
 /**
  *   @brief  Main function to set up the ROS node and implement the exploration

@@ -63,9 +63,9 @@
 #include <vector>
 
 // Class header files
-#include "explorer.hpp"
-#include "grid.hpp"
-#include "map.hpp"
+#include "../include/explorer.hpp"
+#include "../include/grid.hpp"
+#include "../include/map.hpp"
 
 Explorer::Explorer(const ros::NodeHandle &nh) : n_(nh) {
   velocityPub_ =
