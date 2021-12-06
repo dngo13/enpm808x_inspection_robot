@@ -1,0 +1,15 @@
+<launch>
+
+	<include file="$(find enpm808x_inspection_robot)/launch/custom_world.launch"> </include>
+
+	<!-- <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch">
+    <! <arg name="world_file" value="$(find enpm808x_inspection_robot)/launch/worlds/myRoom.world"/> -->
+	<!-- </include>  -->
+
+    <include file="$(find turtlebot3_slam)/launch/turtlebot3_gmapping.launch"/>
+ 	
+	<node name="rviz" pkg="rviz" type="rviz" args="-d $(find enpm808x_inspection_robot)/rviz/myRoom.rviz"/>
+	<include file="$(find turtlebot3_navigation)/launch/move_base.launch"/>
+
+	<!-- <node pkg = "enpm808x_inspection_robot" type = "explorer" name = "explorer" output = "screen" launch-prefix = "xterm -e"/> -->
+</launch>
