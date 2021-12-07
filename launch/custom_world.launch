@@ -1,8 +1,12 @@
 <launch>
-  <arg name="model" default="waffle_pi"/>
+  <arg name="world_name" default="$(find enpm808x_inspection_robot)/launch/worlds/myRoom.world" />
+
+  <arg name="model" default="burger"/>
   <arg name="x_pos" default="-2.0"/>
   <arg name="y_pos" default="-0.5"/>
   <arg name="z_pos" default="0.0"/>
+  // <arg name="map_file" default="$(find enpm808x_inspection_robot)/maps/my_map.yaml" />
+  <arg name="rviz_config" default="$(find enpm808x_inspection_robot)/rviz/myRoom.rviz" />
 
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
     <arg name="world_name" value="$(find enpm808x_inspection_robot)/launch/worlds/myRoom.world"/>

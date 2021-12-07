@@ -1,6 +1,6 @@
 <launch>
 
-	<include file="$(find enpm808x_inspection_robot)/launch/custom_world.launch"> </include>
+	<include file="$(find gazebo_ros)/launch/empty_world.launch"> </include>
 
 	<!-- <include file="$(find turtlebot3_gazebo)/launch/turtlebot3_world.launch">
     <! <arg name="world_file" value="$(find enpm808x_inspection_robot)/launch/worlds/myRoom.world"/> -->
