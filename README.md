@@ -42,3 +42,11 @@ Then make sure you are in the catkin workspace directory.
 ```ash
 roslaunch enpm808x_inspection_robot explore.launch
 ```
+
+# Resources
+Below are links to the free 3D Models we used for our Gazebo Simulation. Gazebo can read Collada mesh files.
+Models are from the free website https://3dwarehouse.sketchup.com/ 
+- [Steam Boiler](https://3dwarehouse.sketchup.com/model/3dd98b18-6e63-46db-b74f-18b04cf2b7b9/STEAM-BOILER)
+- [Chiller](https://3dwarehouse.sketchup.com/model/e43f320c5caa18b8cb2bf6e8b9d93fb0/CHILLER)
+- [Air Handler Unit](https://3dwarehouse.sketchup.com/model/4bcb7bc201809bb610d42f17c59729bc/Air-Handler-with-Hot-Water-Coil)
+
