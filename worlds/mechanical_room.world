@@ -25,7 +25,7 @@
     </model>
 
     <model name="AHU">
-      <pose>-4.530682 -0.198043 0.6  0 0 -1.571170</pose>
+      <pose>-4.530682 -0.198043 0.6  0 0 -1.57</pose>
       <static>true</static>
       <link name="body">
         <visual name="visual">
