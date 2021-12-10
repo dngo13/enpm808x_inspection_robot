@@ -33,6 +33,12 @@ catkin_make
 source devel/setup.bash
 ```
 
+# Updating bashrc 
+Please run this command on terminal to make sure bashrc is updated with the gazebo model locations.
+```bash
+echo "export GAZEBO_MODEL_PATH=$HOME/catkin_ws/src/enpm808x_inspection_robot/worlds" >> ~./bashrc
+```
+
 # Running Gazebo/RVIZ
 After cloning the directory, ensure you are in Phase2 branch
 ```bash
