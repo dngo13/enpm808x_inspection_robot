@@ -45,18 +45,19 @@ class Robot {
     double collision_threshold = 0.35;
     // Subscriber for the LIDAR Data
     ros::Subscriber lidar_data;
-    // boolean for obstacle detection
-    bool obstacleDetected = false;
+
     // boolean for making sure the robot can move ahead
     bool path_clear = true;
 
  public:
+    // boolean for obstacle detection
+    bool obstacle_detected = false;
     // Declaring the new constructor
     explicit Robot(ros::NodeHandle);
     // Function to start the turtlebot motion in the environment
-    void initiateRobot(ros::NodeHandle, ros::Publisher, ros::Rate);
+    void initiateRobot(ros::NodeHandle, ros::Publisher, ros::Rate, bool obstacle_detected);
     // Function to keep turning while the robot is clear of any obstacles
-    void stopRobot(ros::NodeHandle, ros::Publisher, ros::Rate);
+    void turnRobot(ros::NodeHandle, ros::Publisher, ros::Rate,  bool obstacle_detected);
     // Function to stop the robot
     void stopRobot(ros::Publisher, ros::Rate);
     // Function to get LIDAR Data

@@ -37,11 +37,11 @@ Robot::Robot(ros::NodeHandle n) {
                                             &Robot::readLidar, this);
 }
 
-Robot::~Robot() {}
+// Robot::~Robot() {}
 
 void Robot::initiateRobot(ros::NodeHandle n,
                     ros::Publisher chatter_pub,
-                    ros::Rate loop_rate) {
+                    ros::Rate loop_rate, bool obstacle_detected) {
     geometry_msgs::Twist msg;
 
     // Keep running till ros is running fine
@@ -49,7 +49,7 @@ void Robot::initiateRobot(ros::NodeHandle n,
         if (obstacle_detected) {
             stopRobot(chatter_pub, loop_rate);  // Stop the turtlebot
             ROS_WARN_STREAM("OBSTACLE DETECTED");
-            turnRobot(n, chatter_pub, loop_rate);  // Turn the turtlebot
+            turnRobot(n, chatter_pub, loop_rate, obstacle_detected);  // Turn the turtlebot
         } else {
 
         }
@@ -75,7 +75,7 @@ void Robot::stopRobot(ros::Publisher chatter_pub,
 
 void Robot::turnRobot(ros::NodeHandle n,
                 ros::Publisher chatter_pub,
-                ros::Rate loop_rate) {
+                ros::Rate loop_rate, bool obstacle_detected) {
     geometry_msgs::Twist msg;
 
 
@@ -105,21 +105,21 @@ void Robot::turnRobot(ros::NodeHandle n,
 void Robot::readLidar(const sensor_msgs::LaserScan::ConstPtr &msg) {
     int lidar_range = 30;
 
-    std::vector<double> obstacle_detected;
+    std::vector<double> collision_detected;
     std::vector<double> lidar_range_vect;
 
     lidar_range_vect = std::vector<double>(msg->ranges.begin(),
                                             msg->ranges.begin() + lidar_range);
 
-    obstacle_detected = std::vector<double>(msg->ranges.end() - lidar_range,
+    collision_detected = std::vector<double>(msg->ranges.end() - lidar_range,
                                                 msg->ranges.end());
 
     path_clear = true;
 
-    for (auto &range : obstacle_detected) {
+    for (auto &range : collision_detected) {
         if (range < collision_threshold) {
             // Returns the collision flag
-            obstacle_detected = true;
+            // collision_detected = true;
             path_clear = false;
         }
     }

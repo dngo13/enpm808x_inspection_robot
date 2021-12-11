@@ -49,7 +49,7 @@
 #include <memory>
 #include <sstream>
 // Class header files
-#include "../include/robot.hpp"
+#include "../include/robot.h"
 
 
 /**
@@ -64,7 +64,7 @@
 int main(int argc, char **argv) {
   // Set up ROS
   ros::init(argc, argv, "inspection");
-  ros::HandHandle n;
+  ros::NodeHandle n;
 
   // Declaring the Twist publisher
   ros::Publisher chatter_pub = n.advertise < geometry_msgs::Twist
@@ -80,12 +80,12 @@ int main(int argc, char **argv) {
   // exploration
   ros::spinOnce();
 
-  // sleep the node for a duration of 10 seconds to allot time for other nodes
+  // sleep the node for a duration of 10 seconds to allow time for other nodes
   // and environment to be set up
   ros::Duration(10).sleep();
 
   // start the turtlebot
-  robot.initiateRobot(n, chatter_pub, loop_rate);
+  robot.initiateRobot(n, chatter_pub, loop_rate, robot.obstacle_detected);
 
   return 0;
 }
