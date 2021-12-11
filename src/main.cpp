@@ -49,7 +49,7 @@
 #include <memory>
 #include <sstream>
 // Class header files
-#include "../include/robot.h"
+#include "../include/robot.hpp"
 
 
 /**
@@ -63,7 +63,7 @@
 
 int main(int argc, char **argv) {
   // Set up ROS
-  ros::init(argc, argv, "inspection");
+  ros::init(argc, argv, "robot");
   ros::NodeHandle n;
 
   // Declaring the Twist publisher
@@ -76,16 +76,28 @@ int main(int argc, char **argv) {
   // Initialize the robot
   Robot robot(n);
 
+  while (ros::ok()) {
+    geometry_msgs::Twist msg;
+
+    // start the turtlebot
+    robot.initiateRobot(n, chatter_pub, loop_rate, robot.obstacle_detected);
+
   // spin ROS to execute the callbacks to obtain the occupancy grid map before
   // exploration
-  ros::spinOnce();
+    ros::spinOnce();
 
   // sleep the node for a duration of 10 seconds to allow time for other nodes
   // and environment to be set up
-  ros::Duration(10).sleep();
+    loop_rate.sleep();
+  }
 
-  // start the turtlebot
-  robot.initiateRobot(n, chatter_pub, loop_rate, robot.obstacle_detected);
+  // ros::spinOnce();
+
+
+  // ros::Duration(10).sleep();
+
+  // // start the turtlebot
+  // robot.initiateRobot(n, chatter_pub, loop_rate, robot.obstacle_detected);
 
   return 0;
 }

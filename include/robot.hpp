@@ -54,10 +54,13 @@ class Robot {
     bool obstacle_detected = false;
     // Declaring the new constructor
     explicit Robot(ros::NodeHandle);
+    ~Robot();
     // Function to start the turtlebot motion in the environment
-    void initiateRobot(ros::NodeHandle, ros::Publisher, ros::Rate, bool obstacle_detected);
+    void initiateRobot(ros::NodeHandle, ros::Publisher,
+                              ros::Rate, bool obstacle_detected);
     // Function to keep turning while the robot is clear of any obstacles
-    void turnRobot(ros::NodeHandle, ros::Publisher, ros::Rate,  bool obstacle_detected);
+    void turnRobot(ros::NodeHandle, ros::Publisher,
+                              ros::Rate,  bool obstacle_detected);
     // Function to stop the robot
     void stopRobot(ros::Publisher, ros::Rate);
     // Function to get LIDAR Data

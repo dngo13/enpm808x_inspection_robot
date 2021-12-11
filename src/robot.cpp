@@ -27,7 +27,7 @@ SOFTWARE.
 #include "geometry_msgs/Twist.h"
 #include "sensor_msgs/LaserScan.h"
 #include "std_msgs/String.h"
-#include "../include/robot.h"
+#include "../include/robot.hpp"
 
 Robot::Robot(ros::NodeHandle n) {
     ROS_INFO("Starting Inspection...");
@@ -37,7 +37,8 @@ Robot::Robot(ros::NodeHandle n) {
                                             &Robot::readLidar, this);
 }
 
-// Robot::~Robot() {}
+Robot::~Robot() {
+}
 
 void Robot::initiateRobot(ros::NodeHandle n,
                     ros::Publisher chatter_pub,
@@ -45,15 +46,25 @@ void Robot::initiateRobot(ros::NodeHandle n,
     geometry_msgs::Twist msg;
 
     // Keep running till ros is running fine
-    while (ros::ok()) {
-        if (obstacle_detected) {
-            stopRobot(chatter_pub, loop_rate);  // Stop the turtlebot
-            ROS_WARN_STREAM("OBSTACLE DETECTED");
-            turnRobot(n, chatter_pub, loop_rate, obstacle_detected);  // Turn the turtlebot
-        } else {
+    // while (ros::ok()) {
+    if (obstacle_detected) {
+        stopRobot(chatter_pub, loop_rate);  // Stop the turtlebot
+        ROS_WARN_STREAM("OBSTACLE DETECTED");
+        turnRobot(n, chatter_pub, loop_rate,
+                    obstacle_detected);  // Turn the turtlebot
+    } else {
+        ROS_INFO_STREAM("MOVING TOWARD TARGET");
+        msg.linear.x = front_speed;
+        msg.linear.y = 0.0;
+        msg.linear.z = 0.0;
+        msg.angular.x = 0.0;
+        msg.angular.y = 0.0;
+        msg.angular.z = 0.0;
 
-        }
     }
+    // Publish the twist message to anyone listening
+    chatter_pub.publish(msg);
+    // }
 }
 
 void Robot::stopRobot(ros::Publisher chatter_pub,
@@ -61,7 +72,7 @@ void Robot::stopRobot(ros::Publisher chatter_pub,
     geometry_msgs::Twist msg;
 
     // Stop the turtlebot
-    msg.linear.x = front_speed;
+    msg.linear.x = 0.0;
     msg.linear.y = 0.0;
     msg.linear.z = 0.0;
     msg.angular.x = 0.0;
@@ -77,7 +88,6 @@ void Robot::turnRobot(ros::NodeHandle n,
                 ros::Publisher chatter_pub,
                 ros::Rate loop_rate, bool obstacle_detected) {
     geometry_msgs::Twist msg;
-
 
     // Turn the turtlebot
     msg.linear.x = 0.0;
