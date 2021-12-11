@@ -1,0 +1,8 @@
+prefix=/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel
+
+Name: enpm808x_inspection_robot
+Description: Description of enpm808x_inspection_robot
+Version: 0.0.0
+Cflags: -I/home/charu/catkin_ws/src/enpm808x_inspection_robot/include
+Libs: -L${prefix}/lib 
+Requires: 

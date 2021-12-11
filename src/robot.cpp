@@ -22,15 +22,105 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE. 
 */
 
+#include <iostream>
 #include "ros/ros.h"
 #include "geometry_msgs/Twist.h"
 #include "sensor_msgs/LaserScan.h"
+#include "std_msgs/String.h"
 #include "../include/robot.h"
 
-Robot::Robot() {
+Robot::Robot(ros::NodeHandle n) {
+    ROS_INFO("Starting Inspection...");
 
+    lidar_data = n.subscribe < sensor_msgs::LaserScan
+                                        > ("/scan", 10,
+                                            &Robot::readLidar, this);
 }
 
-Robot::~Robot() {
-    
+Robot::~Robot() {}
+
+void Robot::initiateRobot(ros::NodeHandle n,
+                    ros::Publisher chatter_pub,
+                    ros::Rate loop_rate) {
+    geometry_msgs::Twist msg;
+
+    // Keep running till ros is running fine
+    while (ros::ok()) {
+        if (obstacle_detected) {
+            stopRobot(chatter_pub, loop_rate);  // Stop the turtlebot
+            ROS_WARN_STREAM("OBSTACLE DETECTED");
+            turnRobot(n, chatter_pub, loop_rate);  // Turn the turtlebot
+        } else {
+
+        }
+    }
+}
+
+void Robot::stopRobot(ros::Publisher chatter_pub,
+                        ros::Rate loop_rate) {
+    geometry_msgs::Twist msg;
+
+    // Stop the turtlebot
+    msg.linear.x = front_speed;
+    msg.linear.y = 0.0;
+    msg.linear.z = 0.0;
+    msg.angular.x = 0.0;
+    msg.angular.y = 0.0;
+    msg.angular.z = 0.0;
+
+    // Publish the twist message to anyone listening
+    chatter_pub.publish(msg);
+    ros::Duration(sleep_duration).sleep();
+}
+
+void Robot::turnRobot(ros::NodeHandle n,
+                ros::Publisher chatter_pub,
+                ros::Rate loop_rate) {
+    geometry_msgs::Twist msg;
+
+
+    // Turn the turtlebot
+    msg.linear.x = 0.0;
+    msg.linear.y = 0.0;
+    msg.linear.z = 0.0;
+    msg.angular.x = 0.0;
+    msg.angular.y = 0.0;
+    msg.angular.z = turn_speed;
+
+    // Publish the twist message to anyone listening
+    chatter_pub.publish(msg);
+    ros::Duration(sleep_duration).sleep();
+
+    while (!path_clear) {
+        // Sleep for the remaining time until we hit our 10 Hz rate
+        loop_rate.sleep();
+
+        // "Spin" a callback in case we set up any callbacks
+        ros::spinOnce();
+    }
+    stopRobot(chatter_pub, loop_rate);
+    obstacle_detected = false;  // returns collision flag
+}
+
+void Robot::readLidar(const sensor_msgs::LaserScan::ConstPtr &msg) {
+    int lidar_range = 30;
+
+    std::vector<double> obstacle_detected;
+    std::vector<double> lidar_range_vect;
+
+    lidar_range_vect = std::vector<double>(msg->ranges.begin(),
+                                            msg->ranges.begin() + lidar_range);
+
+    obstacle_detected = std::vector<double>(msg->ranges.end() - lidar_range,
+                                                msg->ranges.end());
+
+    path_clear = true;
+
+    for (auto &range : obstacle_detected) {
+        if (range < collision_threshold) {
+            // Returns the collision flag
+            obstacle_detected = true;
+            path_clear = false;
+        }
+    }
 }
