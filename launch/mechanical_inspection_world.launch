@@ -18,5 +18,5 @@
 
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"  args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 
-  <!-- <node pkg="enpm808x_inspection_robot" name="robot" type="robot" output="screen"></node> -->
+	<node pkg="enpm808x_inspection_robot" name="inspection" type="inspection" output = "screen"></node>
 </launch>
