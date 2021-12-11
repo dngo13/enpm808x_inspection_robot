@@ -63,9 +63,9 @@ CMAKE_BINARY_DIR = /home/charu/catkin_ws/src/enpm808x_inspection_robot/build
 # Target rules for target CMakeFiles/_run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch.dir
 
 # All Build rule for target.
+CMakeFiles/_run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch.dir/all: CMakeFiles/InspectionRobotTest.dir/all
 CMakeFiles/_run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch.dir/all: CMakeFiles/tests.dir/all
 CMakeFiles/_run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch.dir/all: CMakeFiles/clean_test_results_enpm808x_inspection_robot.dir/all
-CMakeFiles/_run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch.dir/all: CMakeFiles/InspectionRobotTest.dir/all
 	$(MAKE) -f CMakeFiles/_run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch.dir/build.make CMakeFiles/_run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch.dir/depend
 	$(MAKE) -f CMakeFiles/_run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch.dir/build.make CMakeFiles/_run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch.dir/build
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles --progress-num= "Built target _run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch"
@@ -122,43 +122,6 @@ CMakeFiles/run_tests_enpm808x_inspection_robot_rostest.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/run_tests_enpm808x_inspection_robot_rostest.dir/clean
-
-.PHONY : clean
-
-#=============================================================================
-# Target rules for target CMakeFiles/turtlebot_talker.dir
-
-# All Build rule for target.
-CMakeFiles/turtlebot_talker.dir/all:
-	$(MAKE) -f CMakeFiles/turtlebot_talker.dir/build.make CMakeFiles/turtlebot_talker.dir/depend
-	$(MAKE) -f CMakeFiles/turtlebot_talker.dir/build.make CMakeFiles/turtlebot_talker.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles --progress-num=14,15,16 "Built target turtlebot_talker"
-.PHONY : CMakeFiles/turtlebot_talker.dir/all
-
-# Include target in all.
-all: CMakeFiles/turtlebot_talker.dir/all
-
-.PHONY : all
-
-# Build rule for subdir invocation for target.
-CMakeFiles/turtlebot_talker.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles 3
-	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/turtlebot_talker.dir/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles 0
-.PHONY : CMakeFiles/turtlebot_talker.dir/rule
-
-# Convenience name for target.
-turtlebot_talker: CMakeFiles/turtlebot_talker.dir/rule
-
-.PHONY : turtlebot_talker
-
-# clean rule for target.
-CMakeFiles/turtlebot_talker.dir/clean:
-	$(MAKE) -f CMakeFiles/turtlebot_talker.dir/build.make CMakeFiles/turtlebot_talker.dir/clean
-.PHONY : CMakeFiles/turtlebot_talker.dir/clean
-
-# clean rule for target.
-clean: CMakeFiles/turtlebot_talker.dir/clean
 
 .PHONY : clean
 
@@ -223,6 +186,43 @@ CMakeFiles/InspectionRobotTest.dir/clean:
 
 # clean rule for target.
 clean: CMakeFiles/InspectionRobotTest.dir/clean
+
+.PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/inspection.dir
+
+# All Build rule for target.
+CMakeFiles/inspection.dir/all:
+	$(MAKE) -f CMakeFiles/inspection.dir/build.make CMakeFiles/inspection.dir/depend
+	$(MAKE) -f CMakeFiles/inspection.dir/build.make CMakeFiles/inspection.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles --progress-num=14,15,16 "Built target inspection"
+.PHONY : CMakeFiles/inspection.dir/all
+
+# Include target in all.
+all: CMakeFiles/inspection.dir/all
+
+.PHONY : all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/inspection.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles 3
+	$(MAKE) -f CMakeFiles/Makefile2 CMakeFiles/inspection.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles 0
+.PHONY : CMakeFiles/inspection.dir/rule
+
+# Convenience name for target.
+inspection: CMakeFiles/inspection.dir/rule
+
+.PHONY : inspection
+
+# clean rule for target.
+CMakeFiles/inspection.dir/clean:
+	$(MAKE) -f CMakeFiles/inspection.dir/build.make CMakeFiles/inspection.dir/clean
+.PHONY : CMakeFiles/inspection.dir/clean
+
+# clean rule for target.
+clean: CMakeFiles/inspection.dir/clean
 
 .PHONY : clean
 

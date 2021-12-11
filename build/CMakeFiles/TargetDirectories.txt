@@ -2,10 +2,10 @@
 /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/edit_cache.dir
 /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/_run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch.dir
 /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/run_tests_enpm808x_inspection_robot_rostest.dir
-/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/turtlebot_talker.dir
 /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/install.dir
 /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/move_base_msgs_generate_messages_py.dir
 /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/InspectionRobotTest.dir
+/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/inspection.dir
 /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/move_base_msgs_generate_messages_eus.dir
 /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/tf2_msgs_generate_messages_nodejs.dir
 /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/install/strip.dir

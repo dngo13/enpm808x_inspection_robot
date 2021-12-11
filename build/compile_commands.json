@@ -1,18 +1,18 @@
 [
 {
   "directory": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"enpm808x_inspection_robot\\\" -I/home/charu/catkin_ws/src/enpm808x_inspection_robot/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g   -std=c++11 -o CMakeFiles/turtlebot_talker.dir/src/turtlebot_talker.cpp.o -c /home/charu/catkin_ws/src/enpm808x_inspection_robot/src/turtlebot_talker.cpp",
-  "file": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/src/turtlebot_talker.cpp"
-},
-{
-  "directory": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build",
-  "command": "/usr/bin/x86_64-linux-gnu-g++-7  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"enpm808x_inspection_robot\\\" -I/home/charu/catkin_ws/src/enpm808x_inspection_robot/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g   -std=c++11 -o CMakeFiles/turtlebot_talker.dir/src/robot.cpp.o -c /home/charu/catkin_ws/src/enpm808x_inspection_robot/src/robot.cpp",
-  "file": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/src/robot.cpp"
-},
-{
-  "directory": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build",
   "command": "/usr/bin/x86_64-linux-gnu-g++-7  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"enpm808x_inspection_robot\\\" -I/home/charu/catkin_ws/src/enpm808x_inspection_robot/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp -I/usr/src/googletest/googletest/include  -g   -std=c++11 -o CMakeFiles/InspectionRobotTest.dir/test/InspectionRobotTest.cpp.o -c /home/charu/catkin_ws/src/enpm808x_inspection_robot/test/InspectionRobotTest.cpp",
   "file": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/test/InspectionRobotTest.cpp"
+},
+{
+  "directory": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"enpm808x_inspection_robot\\\" -I/home/charu/catkin_ws/src/enpm808x_inspection_robot/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g   -std=c++11 -o CMakeFiles/inspection.dir/src/main.cpp.o -c /home/charu/catkin_ws/src/enpm808x_inspection_robot/src/main.cpp",
+  "file": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/src/main.cpp"
+},
+{
+  "directory": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build",
+  "command": "/usr/bin/x86_64-linux-gnu-g++-7  -DROSCONSOLE_BACKEND_LOG4CXX -DROS_BUILD_SHARED_LIBS=1 -DROS_PACKAGE_NAME=\\\"enpm808x_inspection_robot\\\" -I/home/charu/catkin_ws/src/enpm808x_inspection_robot/include -I/opt/ros/melodic/include -I/opt/ros/melodic/share/xmlrpcpp/cmake/../../../include/xmlrpcpp  -g   -std=c++11 -o CMakeFiles/inspection.dir/src/robot.cpp.o -c /home/charu/catkin_ws/src/enpm808x_inspection_robot/src/robot.cpp",
+  "file": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/src/robot.cpp"
 },
 {
   "directory": "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/gtest/googlemock",

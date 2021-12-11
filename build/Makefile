@@ -194,19 +194,6 @@ run_tests_enpm808x_inspection_robot_rostest/fast:
 .PHONY : run_tests_enpm808x_inspection_robot_rostest/fast
 
 #=============================================================================
-# Target rules for targets named turtlebot_talker
-
-# Build rule for target.
-turtlebot_talker: cmake_check_build_system
-	$(MAKE) -f CMakeFiles/Makefile2 turtlebot_talker
-.PHONY : turtlebot_talker
-
-# fast build rule for target.
-turtlebot_talker/fast:
-	$(MAKE) -f CMakeFiles/turtlebot_talker.dir/build.make CMakeFiles/turtlebot_talker.dir/build
-.PHONY : turtlebot_talker/fast
-
-#=============================================================================
 # Target rules for targets named move_base_msgs_generate_messages_py
 
 # Build rule for target.
@@ -231,6 +218,19 @@ InspectionRobotTest: cmake_check_build_system
 InspectionRobotTest/fast:
 	$(MAKE) -f CMakeFiles/InspectionRobotTest.dir/build.make CMakeFiles/InspectionRobotTest.dir/build
 .PHONY : InspectionRobotTest/fast
+
+#=============================================================================
+# Target rules for targets named inspection
+
+# Build rule for target.
+inspection: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 inspection
+.PHONY : inspection
+
+# fast build rule for target.
+inspection/fast:
+	$(MAKE) -f CMakeFiles/inspection.dir/build.make CMakeFiles/inspection.dir/build
+.PHONY : inspection/fast
 
 #=============================================================================
 # Target rules for targets named move_base_msgs_generate_messages_eus
@@ -1064,13 +1064,40 @@ gtest/fast:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+src/main.o: src/main.cpp.o
+
+.PHONY : src/main.o
+
+# target to build an object file
+src/main.cpp.o:
+	$(MAKE) -f CMakeFiles/inspection.dir/build.make CMakeFiles/inspection.dir/src/main.cpp.o
+.PHONY : src/main.cpp.o
+
+src/main.i: src/main.cpp.i
+
+.PHONY : src/main.i
+
+# target to preprocess a source file
+src/main.cpp.i:
+	$(MAKE) -f CMakeFiles/inspection.dir/build.make CMakeFiles/inspection.dir/src/main.cpp.i
+.PHONY : src/main.cpp.i
+
+src/main.s: src/main.cpp.s
+
+.PHONY : src/main.s
+
+# target to generate assembly for a file
+src/main.cpp.s:
+	$(MAKE) -f CMakeFiles/inspection.dir/build.make CMakeFiles/inspection.dir/src/main.cpp.s
+.PHONY : src/main.cpp.s
+
 src/robot.o: src/robot.cpp.o
 
 .PHONY : src/robot.o
 
 # target to build an object file
 src/robot.cpp.o:
-	$(MAKE) -f CMakeFiles/turtlebot_talker.dir/build.make CMakeFiles/turtlebot_talker.dir/src/robot.cpp.o
+	$(MAKE) -f CMakeFiles/inspection.dir/build.make CMakeFiles/inspection.dir/src/robot.cpp.o
 .PHONY : src/robot.cpp.o
 
 src/robot.i: src/robot.cpp.i
@@ -1079,7 +1106,7 @@ src/robot.i: src/robot.cpp.i
 
 # target to preprocess a source file
 src/robot.cpp.i:
-	$(MAKE) -f CMakeFiles/turtlebot_talker.dir/build.make CMakeFiles/turtlebot_talker.dir/src/robot.cpp.i
+	$(MAKE) -f CMakeFiles/inspection.dir/build.make CMakeFiles/inspection.dir/src/robot.cpp.i
 .PHONY : src/robot.cpp.i
 
 src/robot.s: src/robot.cpp.s
@@ -1088,35 +1115,8 @@ src/robot.s: src/robot.cpp.s
 
 # target to generate assembly for a file
 src/robot.cpp.s:
-	$(MAKE) -f CMakeFiles/turtlebot_talker.dir/build.make CMakeFiles/turtlebot_talker.dir/src/robot.cpp.s
+	$(MAKE) -f CMakeFiles/inspection.dir/build.make CMakeFiles/inspection.dir/src/robot.cpp.s
 .PHONY : src/robot.cpp.s
-
-src/turtlebot_talker.o: src/turtlebot_talker.cpp.o
-
-.PHONY : src/turtlebot_talker.o
-
-# target to build an object file
-src/turtlebot_talker.cpp.o:
-	$(MAKE) -f CMakeFiles/turtlebot_talker.dir/build.make CMakeFiles/turtlebot_talker.dir/src/turtlebot_talker.cpp.o
-.PHONY : src/turtlebot_talker.cpp.o
-
-src/turtlebot_talker.i: src/turtlebot_talker.cpp.i
-
-.PHONY : src/turtlebot_talker.i
-
-# target to preprocess a source file
-src/turtlebot_talker.cpp.i:
-	$(MAKE) -f CMakeFiles/turtlebot_talker.dir/build.make CMakeFiles/turtlebot_talker.dir/src/turtlebot_talker.cpp.i
-.PHONY : src/turtlebot_talker.cpp.i
-
-src/turtlebot_talker.s: src/turtlebot_talker.cpp.s
-
-.PHONY : src/turtlebot_talker.s
-
-# target to generate assembly for a file
-src/turtlebot_talker.cpp.s:
-	$(MAKE) -f CMakeFiles/turtlebot_talker.dir/build.make CMakeFiles/turtlebot_talker.dir/src/turtlebot_talker.cpp.s
-.PHONY : src/turtlebot_talker.cpp.s
 
 test/InspectionRobotTest.o: test/InspectionRobotTest.cpp.o
 
@@ -1155,10 +1155,10 @@ help:
 	@echo "... edit_cache"
 	@echo "... _run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch"
 	@echo "... run_tests_enpm808x_inspection_robot_rostest"
-	@echo "... turtlebot_talker"
 	@echo "... install"
 	@echo "... move_base_msgs_generate_messages_py"
 	@echo "... InspectionRobotTest"
+	@echo "... inspection"
 	@echo "... move_base_msgs_generate_messages_eus"
 	@echo "... tf2_msgs_generate_messages_nodejs"
 	@echo "... install/strip"
@@ -1227,12 +1227,12 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... src/main.o"
+	@echo "... src/main.i"
+	@echo "... src/main.s"
 	@echo "... src/robot.o"
 	@echo "... src/robot.i"
 	@echo "... src/robot.s"
-	@echo "... src/turtlebot_talker.o"
-	@echo "... src/turtlebot_talker.i"
-	@echo "... src/turtlebot_talker.s"
 	@echo "... test/InspectionRobotTest.o"
 	@echo "... test/InspectionRobotTest.i"
 	@echo "... test/InspectionRobotTest.s"
