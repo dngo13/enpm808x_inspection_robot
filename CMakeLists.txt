@@ -166,21 +166,11 @@ add_executable(laser_scan_publisher src/LaserScan.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(robot
-  ${catkin_LIBRARIES}
-)
-target_link_libraries(tf_broadcaster 
-${catkin_LIBRARIES}
-)
-target_link_libraries(tf_listener 
-${catkin_LIBRARIES}
-)
-target_link_libraries(odometry_publisher 
-${catkin_LIBRARIES}
-)
-target_link_libraries(laser_scan_publisher 
-${catkin_LIBRARIES}
-)
+target_link_libraries(robot ${catkin_LIBRARIES})
+target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
+target_link_libraries(tf_listener ${catkin_LIBRARIES})
+target_link_libraries(odometry_publisher ${catkin_LIBRARIES})
+target_link_libraries(laser_scan_publisher ${catkin_LIBRARIES})
 
 #############
 ## Install ##

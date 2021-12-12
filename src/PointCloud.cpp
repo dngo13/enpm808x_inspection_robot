@@ -52,8 +52,8 @@
 int main(int argc, char** argv) {
   ros::init(argc, argv, "point_cloud_publisher");
 
-  ros::NodeHandle np;
-  ros::Publisher cloud_pub = np.advertise<sensor_msgs::PointCloud>("cloud", 50);
+  ros::NodeHandle n;
+  ros::Publisher cloud_pub = n.advertise<sensor_msgs::PointCloud>("cloud", 50);
 
   unsigned int num_points = 100;
 
