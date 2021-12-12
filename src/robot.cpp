@@ -53,7 +53,7 @@ void Robot::initiateRobot(ros::NodeHandle n,
         turnRobot(n, chatter_pub, loop_rate,
                     obstacle_detected);  // Turn the turtlebot
     } else {
-        ROS_INFO_STREAM("MOVING TOWARD TARGET");
+        // ROS_INFO_STREAM("MOVING TOWARD TARGET");
         msg.linear.x = front_speed;
         msg.linear.y = 0.0;
         msg.linear.z = 0.0;

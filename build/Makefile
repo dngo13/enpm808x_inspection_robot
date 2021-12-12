@@ -194,6 +194,45 @@ run_tests_enpm808x_inspection_robot_rostest/fast:
 .PHONY : run_tests_enpm808x_inspection_robot_rostest/fast
 
 #=============================================================================
+# Target rules for targets named odometry_publisher
+
+# Build rule for target.
+odometry_publisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 odometry_publisher
+.PHONY : odometry_publisher
+
+# fast build rule for target.
+odometry_publisher/fast:
+	$(MAKE) -f CMakeFiles/odometry_publisher.dir/build.make CMakeFiles/odometry_publisher.dir/build
+.PHONY : odometry_publisher/fast
+
+#=============================================================================
+# Target rules for targets named tf_listener
+
+# Build rule for target.
+tf_listener: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_listener
+.PHONY : tf_listener
+
+# fast build rule for target.
+tf_listener/fast:
+	$(MAKE) -f CMakeFiles/tf_listener.dir/build.make CMakeFiles/tf_listener.dir/build
+.PHONY : tf_listener/fast
+
+#=============================================================================
+# Target rules for targets named tf_broadcaster
+
+# Build rule for target.
+tf_broadcaster: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 tf_broadcaster
+.PHONY : tf_broadcaster
+
+# fast build rule for target.
+tf_broadcaster/fast:
+	$(MAKE) -f CMakeFiles/tf_broadcaster.dir/build.make CMakeFiles/tf_broadcaster.dir/build
+.PHONY : tf_broadcaster/fast
+
+#=============================================================================
 # Target rules for targets named move_base_msgs_generate_messages_py
 
 # Build rule for target.
@@ -649,6 +688,19 @@ roscpp_generate_messages_eus/fast:
 .PHONY : roscpp_generate_messages_eus/fast
 
 #=============================================================================
+# Target rules for targets named laser_scan_publisher
+
+# Build rule for target.
+laser_scan_publisher: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 laser_scan_publisher
+.PHONY : laser_scan_publisher
+
+# fast build rule for target.
+laser_scan_publisher/fast:
+	$(MAKE) -f CMakeFiles/laser_scan_publisher.dir/build.make CMakeFiles/laser_scan_publisher.dir/build
+.PHONY : laser_scan_publisher/fast
+
+#=============================================================================
 # Target rules for targets named tests
 
 # Build rule for target.
@@ -1064,6 +1116,60 @@ gtest/fast:
 	$(MAKE) -f gtest/googlemock/gtest/CMakeFiles/gtest.dir/build.make gtest/googlemock/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
+src/LaserScan.o: src/LaserScan.cpp.o
+
+.PHONY : src/LaserScan.o
+
+# target to build an object file
+src/LaserScan.cpp.o:
+	$(MAKE) -f CMakeFiles/laser_scan_publisher.dir/build.make CMakeFiles/laser_scan_publisher.dir/src/LaserScan.cpp.o
+.PHONY : src/LaserScan.cpp.o
+
+src/LaserScan.i: src/LaserScan.cpp.i
+
+.PHONY : src/LaserScan.i
+
+# target to preprocess a source file
+src/LaserScan.cpp.i:
+	$(MAKE) -f CMakeFiles/laser_scan_publisher.dir/build.make CMakeFiles/laser_scan_publisher.dir/src/LaserScan.cpp.i
+.PHONY : src/LaserScan.cpp.i
+
+src/LaserScan.s: src/LaserScan.cpp.s
+
+.PHONY : src/LaserScan.s
+
+# target to generate assembly for a file
+src/LaserScan.cpp.s:
+	$(MAKE) -f CMakeFiles/laser_scan_publisher.dir/build.make CMakeFiles/laser_scan_publisher.dir/src/LaserScan.cpp.s
+.PHONY : src/LaserScan.cpp.s
+
+src/PressureDetection.o: src/PressureDetection.cpp.o
+
+.PHONY : src/PressureDetection.o
+
+# target to build an object file
+src/PressureDetection.cpp.o:
+	$(MAKE) -f CMakeFiles/robot.dir/build.make CMakeFiles/robot.dir/src/PressureDetection.cpp.o
+.PHONY : src/PressureDetection.cpp.o
+
+src/PressureDetection.i: src/PressureDetection.cpp.i
+
+.PHONY : src/PressureDetection.i
+
+# target to preprocess a source file
+src/PressureDetection.cpp.i:
+	$(MAKE) -f CMakeFiles/robot.dir/build.make CMakeFiles/robot.dir/src/PressureDetection.cpp.i
+.PHONY : src/PressureDetection.cpp.i
+
+src/PressureDetection.s: src/PressureDetection.cpp.s
+
+.PHONY : src/PressureDetection.s
+
+# target to generate assembly for a file
+src/PressureDetection.cpp.s:
+	$(MAKE) -f CMakeFiles/robot.dir/build.make CMakeFiles/robot.dir/src/PressureDetection.cpp.s
+.PHONY : src/PressureDetection.cpp.s
+
 src/main.o: src/main.cpp.o
 
 .PHONY : src/main.o
@@ -1118,6 +1224,63 @@ src/robot.cpp.s:
 	$(MAKE) -f CMakeFiles/robot.dir/build.make CMakeFiles/robot.dir/src/robot.cpp.s
 .PHONY : src/robot.cpp.s
 
+src/tf_broadcaster.o: src/tf_broadcaster.cpp.o
+
+.PHONY : src/tf_broadcaster.o
+
+# target to build an object file
+src/tf_broadcaster.cpp.o:
+	$(MAKE) -f CMakeFiles/tf_broadcaster.dir/build.make CMakeFiles/tf_broadcaster.dir/src/tf_broadcaster.cpp.o
+.PHONY : src/tf_broadcaster.cpp.o
+
+src/tf_broadcaster.i: src/tf_broadcaster.cpp.i
+
+.PHONY : src/tf_broadcaster.i
+
+# target to preprocess a source file
+src/tf_broadcaster.cpp.i:
+	$(MAKE) -f CMakeFiles/tf_broadcaster.dir/build.make CMakeFiles/tf_broadcaster.dir/src/tf_broadcaster.cpp.i
+.PHONY : src/tf_broadcaster.cpp.i
+
+src/tf_broadcaster.s: src/tf_broadcaster.cpp.s
+
+.PHONY : src/tf_broadcaster.s
+
+# target to generate assembly for a file
+src/tf_broadcaster.cpp.s:
+	$(MAKE) -f CMakeFiles/tf_broadcaster.dir/build.make CMakeFiles/tf_broadcaster.dir/src/tf_broadcaster.cpp.s
+.PHONY : src/tf_broadcaster.cpp.s
+
+src/tf_listener.o: src/tf_listener.cpp.o
+
+.PHONY : src/tf_listener.o
+
+# target to build an object file
+src/tf_listener.cpp.o:
+	$(MAKE) -f CMakeFiles/odometry_publisher.dir/build.make CMakeFiles/odometry_publisher.dir/src/tf_listener.cpp.o
+	$(MAKE) -f CMakeFiles/tf_listener.dir/build.make CMakeFiles/tf_listener.dir/src/tf_listener.cpp.o
+.PHONY : src/tf_listener.cpp.o
+
+src/tf_listener.i: src/tf_listener.cpp.i
+
+.PHONY : src/tf_listener.i
+
+# target to preprocess a source file
+src/tf_listener.cpp.i:
+	$(MAKE) -f CMakeFiles/odometry_publisher.dir/build.make CMakeFiles/odometry_publisher.dir/src/tf_listener.cpp.i
+	$(MAKE) -f CMakeFiles/tf_listener.dir/build.make CMakeFiles/tf_listener.dir/src/tf_listener.cpp.i
+.PHONY : src/tf_listener.cpp.i
+
+src/tf_listener.s: src/tf_listener.cpp.s
+
+.PHONY : src/tf_listener.s
+
+# target to generate assembly for a file
+src/tf_listener.cpp.s:
+	$(MAKE) -f CMakeFiles/odometry_publisher.dir/build.make CMakeFiles/odometry_publisher.dir/src/tf_listener.cpp.s
+	$(MAKE) -f CMakeFiles/tf_listener.dir/build.make CMakeFiles/tf_listener.dir/src/tf_listener.cpp.s
+.PHONY : src/tf_listener.cpp.s
+
 test/InspectionRobotTest.o: test/InspectionRobotTest.cpp.o
 
 .PHONY : test/InspectionRobotTest.o
@@ -1155,6 +1318,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... _run_tests_enpm808x_inspection_robot_rostest_test_InspectionRobotTest.launch"
 	@echo "... run_tests_enpm808x_inspection_robot_rostest"
+	@echo "... odometry_publisher"
+	@echo "... tf_listener"
+	@echo "... tf_broadcaster"
 	@echo "... install"
 	@echo "... move_base_msgs_generate_messages_py"
 	@echo "... InspectionRobotTest"
@@ -1193,6 +1359,7 @@ help:
 	@echo "... geometry_msgs_generate_messages_eus"
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... roscpp_generate_messages_eus"
+	@echo "... laser_scan_publisher"
 	@echo "... tests"
 	@echo "... roscpp_generate_messages_lisp"
 	@echo "... tf_generate_messages_lisp"
@@ -1227,12 +1394,24 @@ help:
 	@echo "... gmock"
 	@echo "... gtest_main"
 	@echo "... gtest"
+	@echo "... src/LaserScan.o"
+	@echo "... src/LaserScan.i"
+	@echo "... src/LaserScan.s"
+	@echo "... src/PressureDetection.o"
+	@echo "... src/PressureDetection.i"
+	@echo "... src/PressureDetection.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
 	@echo "... src/robot.o"
 	@echo "... src/robot.i"
 	@echo "... src/robot.s"
+	@echo "... src/tf_broadcaster.o"
+	@echo "... src/tf_broadcaster.i"
+	@echo "... src/tf_broadcaster.s"
+	@echo "... src/tf_listener.o"
+	@echo "... src/tf_listener.i"
+	@echo "... src/tf_listener.s"
 	@echo "... test/InspectionRobotTest.o"
 	@echo "... test/InspectionRobotTest.i"
 	@echo "... test/InspectionRobotTest.s"
