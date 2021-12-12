@@ -51,9 +51,10 @@ class PressureDetection {
     float chiller_high_pressure;
  public:
     // Constructor
-    PressureDetection() {};
+    PressureDetection();
     // Destructor
-    ~PressureDetection(){};
+    ~PressureDetection();
+    void pressureCallback(const sensor_msgs::FluidPressure::ConstPtr& msg);
     // Methods for pressure detection for each unit
     float detectAHUPressure();
     float detectBoilerPressure();

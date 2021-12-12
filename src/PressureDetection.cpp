@@ -28,13 +28,16 @@ SOFTWARE.
 #include "sensor_msgs/FluidPressure.h"
 #include "../include/PressureDetection.hpp"
 
-// PressureDetection::PressureDetection() {}
-// PressureDetection::~PressureDetection() {}
+PressureDetection::PressureDetection() {
+    ros::NodeHandle nh;
+    ros::Subscriber pressure_sub = nh.subscribe(<sensor_msgs::FluidPressure> "/sensor_msgs/fluid_pressure", 1000, &pressureCallback);
+}
+PressureDetection::~PressureDetection() {}
 
 
 // Air handler low and high pressure ranges
-static float ahu_low_pressure;
-static float ahu_high_pressure;
+static float ahu_low_pressure = 482633.0; // 70 psi = 482633 Pa
+static float ahu_high_pressure = 689476.0; // 100 psi = 689476 Pa
 
 // Boiler low and high pressure ranges (Need to convert PSI to Pascal)
 static float boiler_low_pressure = 413685.0; // 60 psi = 413685 Pa
@@ -43,20 +46,30 @@ static float boiler_high_pressure = 620528.0; // 90 psi = 620528 Pa
 static float chiller_low_pressure = 241317.0; // 35 psi = 241317 Pa
 static float chiller_high_pressure = 448159.0; // 65 psi = 448159 Pa
 
+/**
+ * @brief Pressure callback function
+ * 
+ * @param msg 
+ */
+void pressureCallback(const sensor_msgs::FluidPressure::ConstPtr& msg) {
+    ROS_INFO("Pressure detected: ", msg->fluid_pressure);
+}
+
 // Passes in sensor_msgs/FluidPressure, from publisher of that unit's fault location
+/** ADD IN X Y LOCATION AND DETECTED PRESSURE **/
 float PressureDetection::detectAHUPressure() {
 
-return ahu_pressure;
+    return ahu_pressure;
 };
 
 float PressureDetection::detectBoilerPressure() {
 
-return boiler_pressure;
+    return boiler_pressure;
 };
 
 float PressureDetection::detectChillerPressure() {
 
-return chiller_pressure;
+    return chiller_pressure;
 };
 
 /**
@@ -112,3 +125,11 @@ bool PressureDetection::incorrectChillerPressure(float chiller_low_pressure, flo
         return false; // Pressure is in range
     }
 };
+
+int main(int argc, char **argv) {
+    ros::init(argc, argv, "pressure_detector");
+    ros::NodeHandle nh;
+    PressureDetection pressureSensor();
+    ros::spin();
+    return 0;
+}
