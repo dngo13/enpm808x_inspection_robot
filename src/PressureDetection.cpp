@@ -30,7 +30,7 @@ SOFTWARE.
 
 PressureDetection::PressureDetection() {
     ros::NodeHandle nh;
-    ros::Subscriber pressure_sub = nh.subscribe(<sensor_msgs::FluidPressure> "/sensor_msgs/fluid_pressure", 1000, &pressureCallback);
+    // ros::Subscriber pressure_sub = nh.subscribe(<sensor_msgs::FluidPressure> "/sensor_msgs/fluid_pressure", 1000, &pressureCallback);
 }
 PressureDetection::~PressureDetection() {}
 
@@ -51,9 +51,9 @@ static float chiller_high_pressure = 448159.0; // 65 psi = 448159 Pa
  * 
  * @param msg 
  */
-void pressureCallback(const sensor_msgs::FluidPressure::ConstPtr& msg) {
-    ROS_INFO("Pressure detected: ", msg->fluid_pressure);
-}
+// void pressureCallback(const sensor_msgs::FluidPressure::ConstPtr& msg) {
+//     ROS_INFO("Pressure detected: ", msg->fluid_pressure);
+// }
 
 // Passes in sensor_msgs/FluidPressure, from publisher of that unit's fault location
 /** ADD IN X Y LOCATION AND DETECTED PRESSURE **/
@@ -126,10 +126,10 @@ bool PressureDetection::incorrectChillerPressure(float chiller_low_pressure, flo
     }
 };
 
-int main(int argc, char **argv) {
-    ros::init(argc, argv, "pressure_detector");
-    ros::NodeHandle nh;
-    PressureDetection pressureSensor();
-    ros::spin();
-    return 0;
-}
+// int main(int argc, char **argv) {
+//     ros::init(argc, argv, "pressure_detector");
+//     ros::NodeHandle nh;
+//     PressureDetection pressureSensor();
+//     ros::spin();
+//     return 0;
+// }
