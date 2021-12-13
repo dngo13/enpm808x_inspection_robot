@@ -129,7 +129,43 @@ file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/charu/catkin_ws/src
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enpm808x_inspection_robot/msg" TYPE FILE FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enpm808x_inspection_robot/cmake" TYPE FILE FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/catkin_generated/installspace/enpm808x_inspection_robot-msg-paths.cmake")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE DIRECTORY FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/include/enpm808x_inspection_robot")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/roseus/ros" TYPE DIRECTORY FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/share/roseus/ros/enpm808x_inspection_robot")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/common-lisp/ros" TYPE DIRECTORY FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/share/common-lisp/ros/enpm808x_inspection_robot")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/gennodejs/ros" TYPE DIRECTORY FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/share/gennodejs/ros/enpm808x_inspection_robot")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  execute_process(COMMAND "/usr/bin/python2" -m compileall "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/lib/python2.7/dist-packages/enpm808x_inspection_robot")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/python2.7/dist-packages" TYPE DIRECTORY FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/lib/python2.7/dist-packages/enpm808x_inspection_robot")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/catkin_generated/installspace/enpm808x_inspection_robot.pc")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enpm808x_inspection_robot/cmake" TYPE FILE FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/catkin_generated/installspace/enpm808x_inspection_robot-msg-extras.cmake")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
@@ -141,6 +177,39 @@ endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enpm808x_inspection_robot" TYPE FILE FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/package.xml")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/enpm808x_inspection_robot/robot" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/enpm808x_inspection_robot/robot")
+    file(RPATH_CHECK
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/enpm808x_inspection_robot/robot"
+         RPATH "")
+  endif()
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/enpm808x_inspection_robot" TYPE EXECUTABLE FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/lib/enpm808x_inspection_robot/robot")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/enpm808x_inspection_robot/robot" AND
+     NOT IS_SYMLINK "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/enpm808x_inspection_robot/robot")
+    file(RPATH_CHANGE
+         FILE "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/enpm808x_inspection_robot/robot"
+         OLD_RPATH "/usr/lib/x86_64-linux-gnu/gazebo-9/plugins:/opt/ros/melodic/lib:"
+         NEW_RPATH "")
+    if(CMAKE_INSTALL_DO_STRIP)
+      execute_process(COMMAND "/usr/bin/strip" "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/enpm808x_inspection_robot/robot")
+    endif()
+  endif()
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include/enpm808x_inspection_robot" TYPE DIRECTORY FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/include/enpm808x_inspection_robot/")
+endif()
+
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enpm808x_inspection_robot" TYPE DIRECTORY FILES
+    "/home/charu/catkin_ws/src/enpm808x_inspection_robot/launch"
+    "/home/charu/catkin_ws/src/enpm808x_inspection_robot/models"
+    "/home/charu/catkin_ws/src/enpm808x_inspection_robot/rviz"
+    "/home/charu/catkin_ws/src/enpm808x_inspection_robot/worlds"
+    )
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)

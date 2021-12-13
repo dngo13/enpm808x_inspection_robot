@@ -91,9 +91,9 @@ endif()
 # flag project as catkin-based to distinguish if a find_package()-ed project is a catkin project
 set(enpm808x_inspection_robot_FOUND_CATKIN_PROJECT TRUE)
 
-if(NOT "/home/charu/catkin_ws/src/enpm808x_inspection_robot/include " STREQUAL " ")
+if(NOT "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/include;/home/charu/catkin_ws/src/enpm808x_inspection_robot/include;/usr/include;/usr/include/gazebo-9;/usr/include/bullet;/usr/include/simbody;/usr/include/sdformat-6.0;/usr/include/ignition/math4;/usr/include/OGRE;/usr/include/OGRE/Terrain;/usr/include/OGRE/Paging;/usr/include/ignition/transport4;/usr/include/ignition/msgs1;/usr/include/ignition/common1;/usr/include/ignition/fuel_tools1 " STREQUAL " ")
   set(enpm808x_inspection_robot_INCLUDE_DIRS "")
-  set(_include_dirs "/home/charu/catkin_ws/src/enpm808x_inspection_robot/include")
+  set(_include_dirs "/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/include;/home/charu/catkin_ws/src/enpm808x_inspection_robot/include;/usr/include;/usr/include/gazebo-9;/usr/include/bullet;/usr/include/simbody;/usr/include/sdformat-6.0;/usr/include/ignition/math4;/usr/include/OGRE;/usr/include/OGRE/Terrain;/usr/include/OGRE/Paging;/usr/include/ignition/transport4;/usr/include/ignition/msgs1;/usr/include/ignition/common1;/usr/include/ignition/fuel_tools1")
   if(NOT " " STREQUAL " ")
     set(_report "Check the issue tracker '' and consider creating a ticket if the problem has not been reported yet.")
   elseif(NOT "http://wiki.ros.org/enpm808x_inspection_robot " STREQUAL " ")
@@ -116,7 +116,7 @@ if(NOT "/home/charu/catkin_ws/src/enpm808x_inspection_robot/include " STREQUAL "
   endforeach()
 endif()
 
-set(libraries "")
+set(libraries "BulletSoftBody;BulletDynamics;BulletCollision;LinearMath;/usr/lib/x86_64-linux-gnu/libSimTKsimbody.so;/usr/lib/x86_64-linux-gnu/libSimTKmath.so;/usr/lib/x86_64-linux-gnu/libSimTKcommon.so;/usr/lib/x86_64-linux-gnu/liblapack.so;/usr/lib/x86_64-linux-gnu/libblas.so;pthread;rt;dl;m;/usr/lib/x86_64-linux-gnu/libgazebo.so;/usr/lib/x86_64-linux-gnu/libgazebo_client.so;/usr/lib/x86_64-linux-gnu/libgazebo_gui.so;/usr/lib/x86_64-linux-gnu/libgazebo_sensors.so;/usr/lib/x86_64-linux-gnu/libgazebo_rendering.so;/usr/lib/x86_64-linux-gnu/libgazebo_physics.so;/usr/lib/x86_64-linux-gnu/libgazebo_ode.so;/usr/lib/x86_64-linux-gnu/libgazebo_transport.so;/usr/lib/x86_64-linux-gnu/libgazebo_msgs.so;/usr/lib/x86_64-linux-gnu/libgazebo_util.so;/usr/lib/x86_64-linux-gnu/libgazebo_common.so;/usr/lib/x86_64-linux-gnu/libgazebo_gimpact.so;/usr/lib/x86_64-linux-gnu/libgazebo_opcode.so;/usr/lib/x86_64-linux-gnu/libgazebo_opende_ou.so;/usr/lib/x86_64-linux-gnu/libboost_signals.so;/usr/lib/x86_64-linux-gnu/libboost_filesystem.so;/usr/lib/x86_64-linux-gnu/libboost_program_options.so;/usr/lib/x86_64-linux-gnu/libboost_regex.so;/usr/lib/x86_64-linux-gnu/libboost_iostreams.so;/usr/lib/x86_64-linux-gnu/libprotobuf.so;-lpthread;/usr/lib/x86_64-linux-gnu/libsdformat.so;optimized;/usr/lib/x86_64-linux-gnu/libOgreMain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreMain.so;/usr/lib/x86_64-linux-gnu/libboost_thread.so;/usr/lib/x86_64-linux-gnu/libboost_date_time.so;/usr/lib/x86_64-linux-gnu/libboost_system.so;/usr/lib/x86_64-linux-gnu/libboost_atomic.so;/usr/lib/x86_64-linux-gnu/libboost_chrono.so;/usr/lib/x86_64-linux-gnu/libpthread.so;optimized;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;debug;/usr/lib/x86_64-linux-gnu/libOgreTerrain.so;optimized;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;debug;/usr/lib/x86_64-linux-gnu/libOgrePaging.so;/usr/lib/x86_64-linux-gnu/libignition-math4.so.4.0.0;/usr/lib/x86_64-linux-gnu/libignition-transport4.so.4.0.0;/usr/lib/x86_64-linux-gnu/libignition-msgs1.so.1.0.0;/usr/lib/x86_64-linux-gnu/libignition-common1.so.1.0.1;/usr/lib/x86_64-linux-gnu/libignition-fuel_tools1.so.1.0.0")
 foreach(library ${libraries})
   # keep build configuration keywords, target names and absolute libraries as-is
   if("${library}" MATCHES "^(debug|optimized|general)$")
@@ -177,7 +177,7 @@ foreach(library ${libraries})
   endif()
 endforeach()
 
-set(enpm808x_inspection_robot_EXPORTED_TARGETS "")
+set(enpm808x_inspection_robot_EXPORTED_TARGETS "enpm808x_inspection_robot_generate_messages_cpp;enpm808x_inspection_robot_generate_messages_eus;enpm808x_inspection_robot_generate_messages_lisp;enpm808x_inspection_robot_generate_messages_nodejs;enpm808x_inspection_robot_generate_messages_py")
 # create dummy targets for exported code generation targets to make life of users easier
 foreach(t ${enpm808x_inspection_robot_EXPORTED_TARGETS})
   if(NOT TARGET ${t})
@@ -185,7 +185,7 @@ foreach(t ${enpm808x_inspection_robot_EXPORTED_TARGETS})
   endif()
 endforeach()
 
-set(depends "")
+set(depends "roscpp;std_msgs;sensor_msgs;geometry_msgs;nav_msgs;tf;gazebo_ros;message_runtime;message_generation;message_runtime;roscpp;rospy;std_msgs;tf")
 foreach(depend ${depends})
   string(REPLACE " " ";" depend_list ${depend})
   # the package name of the dependency must be kept in a unique variable so that it is not overwritten in recursive calls
@@ -214,7 +214,7 @@ foreach(depend ${depends})
   list(APPEND enpm808x_inspection_robot_EXPORTED_TARGETS ${${enpm808x_inspection_robot_dep}_EXPORTED_TARGETS})
 endforeach()
 
-set(pkg_cfg_extras "")
+set(pkg_cfg_extras "enpm808x_inspection_robot-msg-extras.cmake")
 foreach(extra ${pkg_cfg_extras})
   if(NOT IS_ABSOLUTE ${extra})
     set(extra ${enpm808x_inspection_robot_DIR}/${extra})

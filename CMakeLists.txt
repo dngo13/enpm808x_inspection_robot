@@ -58,11 +58,10 @@ find_package(gazebo REQUIRED)
 ##   * add every package in MSG_DEP_SET to generate_messages(DEPENDENCIES ...)
 
 ## Generate messages in the 'msg' folder
-# add_message_files(
-#   FILES
-#   Message1.msg
-#   Message2.msg
-# )
+add_message_files(
+  FILES
+  inspect.msg
+)
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -79,10 +78,10 @@ find_package(gazebo REQUIRED)
 # )
 
 ## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   std_msgs
-# )
+generate_messages(
+  DEPENDENCIES
+  std_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -115,10 +114,10 @@ find_package(gazebo REQUIRED)
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
  INCLUDE_DIRS include
- CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros
+ CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros message_runtime
   DEPENDS GAZEBO
 #  LIBRARIES enpm808x_inspection_robot
-#  CATKIN_DEPENDS message_generation message_runtime roscpp rospy std_msgs tf
+  CATKIN_DEPENDS message_generation message_runtime roscpp rospy std_msgs tf
 #  DEPENDS system_lib
 )
 
@@ -149,7 +148,9 @@ include_directories(
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(robot src/main.cpp src/robot.cpp src/PressureDetection.cpp)
+add_executable(robot src/main.cpp src/robot.cpp)
+add_executable(pressure_detector src/PressureDetection.cpp)
+# add_executable(robot src/main.cpp src/robot.cpp src/PressureDetection.cpp)
 add_executable(tf_broadcaster src/tf_broadcaster.cpp)
 add_executable(tf_listener src/tf_listener.cpp)
 add_executable(odometry_publisher src/tf_listener.cpp)
@@ -166,11 +167,26 @@ add_executable(laser_scan_publisher src/LaserScan.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(robot ${catkin_LIBRARIES})
-target_link_libraries(tf_broadcaster ${catkin_LIBRARIES})
-target_link_libraries(tf_listener ${catkin_LIBRARIES})
-target_link_libraries(odometry_publisher ${catkin_LIBRARIES})
-target_link_libraries(laser_scan_publisher ${catkin_LIBRARIES})
+target_link_libraries(robot
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(tf_broadcaster 
+${catkin_LIBRARIES}
+)
+target_link_libraries(tf_listener 
+${catkin_LIBRARIES}
+)
+target_link_libraries(odometry_publisher 
+${catkin_LIBRARIES}
+)
+target_link_libraries(laser_scan_publisher 
+${catkin_LIBRARIES}
+)
+target_link_libraries(pressure_detector 
+${catkin_LIBRARIES}
+)
+
+add_dependencies(pressure_detector enpm808x_inspection_robot_generate_messages_cpp)
 
 #############
 ## Install ##

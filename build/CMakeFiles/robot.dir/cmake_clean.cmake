@@ -1,7 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/robot.dir/src/main.cpp.o"
   "CMakeFiles/robot.dir/src/robot.cpp.o"
-  "CMakeFiles/robot.dir/src/PressureDetection.cpp.o"
   "devel/lib/enpm808x_inspection_robot/robot.pdb"
   "devel/lib/enpm808x_inspection_robot/robot"
 )
