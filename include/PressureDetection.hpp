@@ -52,7 +52,7 @@ class PressureDetection {
 
  public:
     // Constructor
-    explicit PressureDetection(ros::NodeHandle);
+    explicit PressureDetection();
     // Destructor
     ~PressureDetection();
     void pressureCallback(const sensor_msgs::FluidPressure::ConstPtr& msg);
