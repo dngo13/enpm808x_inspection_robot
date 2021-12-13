@@ -35,8 +35,8 @@ SOFTWARE.
 PressureDetection::PressureDetection() {
     ros::NodeHandle nh;
 
-    ros::Subscriber pressure_sub =
-                    nh.subscribe("inspection", 1000, pressureCallback);
+    // ros::Subscriber pressure_sub =
+    //                 nh.subscribe("inspection", 1000, pressureCallback);
 
     // if (detectAHUPressure = true) {
     //     if (incorrectAHUPressure(
@@ -177,6 +177,8 @@ bool PressureDetection::incorrectChillerPressure(float chiller_low_pressure,
 int main(int argc, char **argv) {
     ros::init(argc, argv, "pressure_detector");
     ros::NodeHandle nh;
+    ros::Subscriber pressure_sub =
+                    nh.subscribe("inspection", 1000, pressureCallback);
 
     ros::Publisher pressure_pub =
         nh.advertise<enpm808x_inspection_robot::inspect>("inspection", 1000);
