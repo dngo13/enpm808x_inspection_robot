@@ -37,19 +37,48 @@ SOFTWARE.
 #include <ros/ros.h>
 #include <ros/service_client.h>
 #include <gtest/gtest.h>
+#include "../include/PressureDetection.hpp"
 
-
-TEST(RobotVelPublisher, velPubExistTest) {
-    ros::NodeHandle nh;
-    ros::Subscriber sub = nh.subscribe("/mobile_base/commands/velocity", 1);
-    EXPECT_EQ(1, sub.getNumPublishers());
+/**
+ * @brief Checks if AHU pressure is in range
+ * 
+ */
+TEST(PressureDetection, pressureAHUTest) {
+    static float ahu_low_pressure = 482633.0;
+    static float ahu_high_pressure = 689476.0;
+    float ahu_pressure = 500000.0;
+    EXPECT_LE(ahu_pressure, ahu_high_pressure);
+    EXPECT_GE(ahu_pressure, ahu_low_pressure);
 }
 
+/**
+ * @brief Checks if boiler pressure is in range
+ * 
+ */
+TEST(PressureDetection, pressureBoilerTest) {
+    static float boiler_low_pressure = 413685.0;
+    static float boiler_high_pressure = 620528.0;
+    float boiler_pressure = 500000.0;
+    EXPECT_LE(boiler_pressure, boiler_high_pressure);
+    EXPECT_GE(boiler_pressure, boiler_low_pressure);
+}
+
+/**
+ * @brief Checks if chiller pressure is in range
+ * 
+ */
+TEST(PressureDetection, pressureChillerTest) {
+    static float chiller_low_pressure = 241317.0;
+    static float chiller_high_pressure = 448159.0;
+    float chiller_pressure = 300000.0;
+    EXPECT_LE(chiller_pressure, chiller_high_pressure);
+    EXPECT_GE(chiller_pressure, chiller_low_pressure);
+}
 
 
 int main(int argc, char **argv) {
     testing::InitGoogleTest(&argc, argv);
-    ros::init(argc, argv, "tester");
+    ros::init(argc, argv, "InspectionRobotTest");
     ros::NodeHandle n;
     return RUN_ALL_TESTS();
 }
