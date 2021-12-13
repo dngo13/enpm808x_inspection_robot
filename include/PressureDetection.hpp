@@ -36,9 +36,9 @@ SOFTWARE.
 class PressureDetection {
  private:
     // Detected pressure
-    float ahu_pressure; // Pascals
-    float boiler_pressure; // Pascals
-    float chiller_pressure; // Pascals
+    float ahu_pressure;  // Pascals
+    float boiler_pressure;  // Pascals
+    float chiller_pressure;  // Pascals
 
     // Air handler low and high pressure ranges
     float ahu_low_pressure;
@@ -49,9 +49,10 @@ class PressureDetection {
     // Chiller low and high pressure ranges
     float chiller_low_pressure;
     float chiller_high_pressure;
+
  public:
     // Constructor
-    PressureDetection();
+    explicit PressureDetection(ros::NodeHandle);
     // Destructor
     ~PressureDetection();
     void pressureCallback(const sensor_msgs::FluidPressure::ConstPtr& msg);
@@ -61,8 +62,10 @@ class PressureDetection {
     float detectChillerPressure();
     // Methods to check range of pressure for each unit
     bool incorrectAHUPressure(float ahu_low_pressure, float ahu_high_pressure);
-    bool incorrectBoilerPressure(float boiler_low_pressure, float boiler_high_pressure);
-    bool incorrectChillerPressure(float chiller_low_pressure, float chiller_high_pressure);
+    bool incorrectBoilerPressure(float boiler_low_pressure,
+                                             float boiler_high_pressure);
+    bool incorrectChillerPressure(float chiller_low_pressure,
+                                             float chiller_high_pressure);
 
 };
 

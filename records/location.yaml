@@ -1,0 +1,30 @@
+Chiller:
+    position:
+        y: -2.5
+        x: -4.55
+        z: 0.0
+    orientation:
+        y: 0.0
+        x: 0.0
+        w: 1.0
+        z: 0.0
+Bolier:
+    position:
+        y: -4.45
+        x: -1.0
+        z: 0.0
+    orientation:
+        y: 0.0
+        x: 0.0
+        w: 1.0
+        z: 0.0
+AHU:
+    position:
+        y: -1.5
+        x: 3.35
+        z: 0.0
+    orientation:
+        y: 0.0
+        x: 0.0
+        w: 1.0
+        z: 0.0

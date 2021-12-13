@@ -61,6 +61,8 @@ void Robot::initiateRobot(ros::NodeHandle n,
         msg.angular.y = 0.0;
         msg.angular.z = 0.0;
 
+        // move to location
+
     }
     // Publish the twist message to anyone listening
     chatter_pub.publish(msg);

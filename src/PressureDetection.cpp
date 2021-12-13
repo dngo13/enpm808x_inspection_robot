@@ -32,37 +32,25 @@ SOFTWARE.
 #include "enpm808x_inspection_robot/inspect.h"
 
 
+// Air handler low and high pressure ranges
+static float ahu_low_pressure = 482633.0;  // 70 psi = 482633 Pa
+static float ahu_high_pressure = 689476.0;  // 100 psi = 689476 Pa
+
+// Boiler low and high pressure ranges (Need to convert PSI to Pascal)
+static float boiler_low_pressure = 413685.0;  // 60 psi = 413685 Pa
+static float boiler_high_pressure = 620528.0;  // 90 psi = 620528 Pa
+// Chiller low and high pressure ranges
+static float chiller_low_pressure = 241317.0;  // 35 psi = 241317 Pa
+static float chiller_high_pressure = 448159.0;  // 65 psi = 448159 Pa
+/** ADD IN X Y LOCATION AND DETECTED PRESSURE **/
+
+
 PressureDetection::PressureDetection() {
     ros::NodeHandle nh;
 
+    std::cout << "Hello World" << std::endl;
     // ros::Subscriber pressure_sub =
     //                 nh.subscribe("inspection", 1000, pressureCallback);
-
-    // if (detectAHUPressure = true) {
-    //     if (incorrectAHUPressure(
-    //                        ahu_low_pressure, ahu_high_pressure) == true) {
-    //         ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
-    //     } else {
-    //         ROS_INFO_ONCE("Air Handling Unit safe to operate");
-    //     }
-    // }
-    // if (detectBoilerPressure == true) {
-    //     if (incorrectBoilerPressure(
-    //                     boiler_low_pressure, boiler_high_pressure) == true) {
-    //         ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
-    //     } else {
-    //         ROS_INFO_ONCE("Boiler safe to operate");
-    //         }
-    // }
-
-    // if (detectChillerPressure == true) {
-    //     if (incorrectChillerPressure(chiller_low_pressure,
-    //                                         chiller_high_pressure) == true) {
-    //     ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
-    // } else {
-    //     ROS_INFO_ONCE("Chiller safe to operate");
-    //     }
-    // }
 }
 
 PressureDetection::~PressureDetection() {
@@ -74,30 +62,42 @@ PressureDetection::~PressureDetection() {
  * @param msg 
  */
 void pressureCallback(const enpm808x_inspection_robot::inspect &inspect) {
-    ROS_INFO("Pressure of AHU: ", inspect.ahu_pressure);
-    ROS_INFO("Pressure of boiler: ", inspect.boiler_pressure);
-    ROS_INFO("Low Pressure of chiller: ", inspect.chiller_pressure);
+    // PressureDetection
 
+    ROS_INFO("Pressure of AHU: %f", inspect.ahu_pressure);
+    ROS_INFO("Pressure of boiler: %f", inspect.boiler_pressure);
+    ROS_INFO("Pressure of chiller: %f", inspect.chiller_pressure);
 
-    // void pressureCallback(const sensor_msgs::FluidPressure::ConstPtr& msg) {
-    //     ROS_INFO("Pressure detected: ", msg->fluid_pressure);
+    // if (detectAHUPressure() == true) {
+    //     ROS_INFO("Pressure of AHU: %f", inspect.ahu_pressure);
+    //     if (incorrectAHUPressure(
+    //                        ahu_low_pressure, ahu_high_pressure) == true) {
+    //         ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
+    //     } else {
+    //         ROS_INFO_ONCE("Air Handling Unit safe to operate");
+    //     }
+    // }
+    // if (detectBoilerPressure == true) {
+    //     ROS_INFO("Pressure of boiler: %f", inspect.boiler_pressure);
+    //     if (incorrectBoilerPressure(
+    //                     boiler_low_pressure, boiler_high_pressure) == true) {
+    //         ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
+    //     } else {
+    //         ROS_INFO_ONCE("Boiler safe to operate");
+    //         }
+    // }
+
+    // if (detectChillerPressure == true) {
+    //     ROS_INFO("Pressure of chiller: %f", inspect.chiller_pressure);
+    //     if (incorrectChillerPressure(chiller_low_pressure,
+    //                                         chiller_high_pressure) == true) {
+    //     ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
+    // } else {
+    //     ROS_INFO_ONCE("Chiller safe to operate");
+    //     }
     // }
 }
 
-// Air handler low and high pressure ranges
-static float ahu_low_pressure = 482633.0;  // 70 psi = 482633 Pa
-static float ahu_high_pressure = 689476.0;  // 100 psi = 689476 Pa
-
-// Boiler low and high pressure ranges (Need to convert PSI to Pascal)
-static float boiler_low_pressure = 413685.0;  // 60 psi = 413685 Pa
-static float boiler_high_pressure = 620528.0;  // 90 psi = 620528 Pa
-// Chiller low and high pressure ranges
-static float chiller_low_pressure = 241317.0;  // 35 psi = 241317 Pa
-static float chiller_high_pressure = 448159.0;  // 65 psi = 448159 Pa
-
-// Passes in sensor_msgs/FluidPressure, from publisher of that
-// unit's fault location
-/** ADD IN X Y LOCATION AND DETECTED PRESSURE **/
 float PressureDetection::detectAHUPressure() {
     return ahu_pressure;
 }
@@ -177,8 +177,9 @@ bool PressureDetection::incorrectChillerPressure(float chiller_low_pressure,
 int main(int argc, char **argv) {
     ros::init(argc, argv, "pressure_detector");
     ros::NodeHandle nh;
+
     ros::Subscriber pressure_sub =
-                    nh.subscribe("inspection", 1000, pressureCallback);
+                nh.subscribe("inspection", 1000, pressureCallback);
 
     ros::Publisher pressure_pub =
         nh.advertise<enpm808x_inspection_robot::inspect>("inspection", 1000);
@@ -191,7 +192,7 @@ int main(int argc, char **argv) {
     // chiller_low_pressure = 241317.0;
     // chiller_high_pressure = 448159.0;
 
-    // PressureDetection PressureDetection();
+    PressureDetection PressureDetection();
 
     while (ros::ok()) {
         enpm808x_inspection_robot::inspect inspect;
