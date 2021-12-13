@@ -63,14 +63,14 @@ void Robot::initiateRobot(ros::NodeHandle n,
         msg.angular.z = 0.0;
 
         // move to location
-        if (((x_pos <= -4) || (x_pos >= -5)) || ((y_pos <= -2.5) || (y_pos >= -3.5))) {
-            PressureDetection.detectChillerPressure("true");
+        if (((x_pos <= -5) || (x_pos >= -4)) || ((y_pos <= -3.5) || (y_pos >= -2.5))) {
+            PressureDetection::detectChillerPressure("true");
         }
         if (((x_pos <= -1) || (x_pos >= -2)) || ((y_pos <= -4.0) || (y_pos >= -5.0))) {
-            PressureDetection.detectBoilerPressure("true");
+            PressureDetection::detectBoilerPressure("true");
         }
         if ((x_pos >= 0) ||  (y_pos >= -1.5)) {
-            PressureDetection.detectAHUPressure("true");
+            PressureDetection::detectAHUPressure("true");
         }
     }
     // Publish the twist message to anyone listening

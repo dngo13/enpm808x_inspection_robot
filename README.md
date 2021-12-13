@@ -14,14 +14,18 @@ The goal of this project is to simulate a facility room with a boiler, chiller, 
 - Ubuntu 18.04
 - ROS Melodic
 - Gazebo, RVIZ
-- Turtlebot 3 Waffle Pi
+- Turtlebot 3 Burger
 - Turtlebot 3 Dependencies (move_base, amcl, navigation, gazebo)
 Install turtlebot 3 from this link: https://emanual.robotis.com/docs/en/platform/turtlebot3/quick-start/
+
+## Agile Iterative Process
+We have been following the agile methodology in this project to track all the tasks involved. We have been utilizing the notion platform to achieve this which can be seen in the link below:
 
 # Phase 1 and 2 Deliverables
 - UMLs are in UML/initial/ directory
 - [AIP Document](https://docs.google.com/spreadsheets/d/1DOCv0d4YN2u2S71dpkWC5jOVsrEH4w9d/edit?usp=sharing&ouid=113553065067285094891&rtpof=true&sd=true)
 - [Sprint Planing Notes](https://docs.google.com/document/d/1maDs29Tq0LcT0_IH3nwbV9nM2bu69N_wtKcM96Btzhw/edit?usp=sharing)
+- []
 
 # Cloning the repository
 In terminal 
