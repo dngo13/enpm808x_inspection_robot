@@ -28,6 +28,7 @@ SOFTWARE.
 #include "sensor_msgs/LaserScan.h"
 #include "std_msgs/String.h"
 #include "../include/robot.hpp"
+#include "../include/PressureDetection.hpp"
 
 Robot::Robot(ros::NodeHandle n) {
     ROS_INFO("Starting Inspection...");
@@ -54,7 +55,7 @@ void Robot::initiateRobot(ros::NodeHandle n,
                     obstacle_detected);  // Turn the turtlebot
     } else {
         // ROS_INFO_STREAM("MOVING TOWARD TARGET");
-        msg.linear.x = front_speed;
+        msg.linear.x = 0.0;
         msg.linear.y = 0.0;
         msg.linear.z = 0.0;
         msg.angular.x = 0.0;
@@ -62,7 +63,15 @@ void Robot::initiateRobot(ros::NodeHandle n,
         msg.angular.z = 0.0;
 
         // move to location
-
+        if (((x_pos <= -4) || (x_pos >= -5)) || ((y_pos <= -2.5) || (y_pos >= -3.5))) {
+            PressureDetection.detectChillerPressure("true");
+        }
+        if (((x_pos <= -1) || (x_pos >= -2)) || ((y_pos <= -4.0) || (y_pos >= -5.0))) {
+            PressureDetection.detectBoilerPressure("true");
+        }
+        if ((x_pos >= 0) ||  (y_pos >= -1.5)) {
+            PressureDetection.detectAHUPressure("true");
+        }
     }
     // Publish the twist message to anyone listening
     chatter_pub.publish(msg);

@@ -48,7 +48,7 @@ static float chiller_high_pressure = 448159.0;  // 65 psi = 448159 Pa
 PressureDetection::PressureDetection() {
     ros::NodeHandle nh;
 
-    std::cout << "Hello World" << std::endl;
+    ROS_INFO_STREAM("Pressure Detection");
     // ros::Subscriber pressure_sub =
     //                 nh.subscribe("inspection", 1000, pressureCallback);
 }
@@ -68,46 +68,46 @@ void pressureCallback(const enpm808x_inspection_robot::inspect &inspect) {
     ROS_INFO("Pressure of boiler: %f", inspect.boiler_pressure);
     ROS_INFO("Pressure of chiller: %f", inspect.chiller_pressure);
 
-    // if (detectAHUPressure() == true) {
-    //     ROS_INFO("Pressure of AHU: %f", inspect.ahu_pressure);
-    //     if (incorrectAHUPressure(
-    //                        ahu_low_pressure, ahu_high_pressure) == true) {
-    //         ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
-    //     } else {
-    //         ROS_INFO_ONCE("Air Handling Unit safe to operate");
-    //     }
-    // }
-    // if (detectBoilerPressure == true) {
-    //     ROS_INFO("Pressure of boiler: %f", inspect.boiler_pressure);
-    //     if (incorrectBoilerPressure(
-    //                     boiler_low_pressure, boiler_high_pressure) == true) {
-    //         ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
-    //     } else {
-    //         ROS_INFO_ONCE("Boiler safe to operate");
-    //         }
-    // }
-
-    // if (detectChillerPressure == true) {
-    //     ROS_INFO("Pressure of chiller: %f", inspect.chiller_pressure);
-    //     if (incorrectChillerPressure(chiller_low_pressure,
-    //                                         chiller_high_pressure) == true) {
-    //     ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
-    // } else {
-    //     ROS_INFO_ONCE("Chiller safe to operate");
-    //     }
-    // }
 }
 
-float PressureDetection::detectAHUPressure() {
-    return ahu_pressure;
+float PressureDetection::detectAHUPressure(bool AHU_flag) {
+    if (AHU_flag == true) {
+        ROS_INFO("Pressure of AHU: %f", inspect.ahu_pressure);
+        if (incorrectAHUPressure(
+            ahu_low_pressure, ahu_high_pressure,
+                        inspect.ahu_pressure) == true) {
+            ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
+        } else {
+            ROS_INFO_ONCE("Air Handling Unit safe to operate");
+        }
+    return false;
 }
 
-float PressureDetection::detectBoilerPressure() {
-    return boiler_pressure;
+float PressureDetection::detectBoilerPressure(bool boiler_flag) {
+    if (boiler_flag == true) {
+        ROS_INFO("Pressure of boiler: %f", inspect.boiler_pressure);
+        if (incorrectBoilerPressure(
+            boiler_low_pressure, boiler_high_pressure,
+                            inspect.boiler_pressure) == true) {
+            ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
+        } else {
+            ROS_INFO_ONCE("Boiler safe to operate");
+            }
+    }
+    return false;
 }
 
-float PressureDetection::detectChillerPressure() {
-    return chiller_pressure;
+float PressureDetection::detectChillerPressure(bool chiller_flag) {
+    if (chiller_flag == true) {
+        ROS_INFO("Pressure of chiller: %f", inspect.chiller_pressure);
+        if (incorrectChillerPressure(chiller_low_pressure,
+            chiller_high_pressure, inspect.chiller_pressure) == true) {
+            ROS_WARN_STREAM("Pressure out of range. Maintenance required!!");
+        } else {
+            ROS_INFO_ONCE("Chiller safe to operate");
+        }
+    return false;
+    }
 }
 
 /**
@@ -119,9 +119,9 @@ float PressureDetection::detectChillerPressure() {
  * @return false If pressure is in range
  */
 bool PressureDetection::incorrectAHUPressure(float ahu_low_pressure,
-                                                float ahu_high_pressure) {
+                    float ahu_high_pressure, float inspect.ahu_pressure) {
     // Calls detectAHUPressure()
-    ahu_pressure = detectAHUPressure();
+    // ahu_pressure = detectAHUPressure();
     if ((ahu_pressure < ahu_low_pressure) || (
                                         ahu_pressure > ahu_high_pressure)) {
         return true;  // Out of range, incorrect pressure
@@ -141,9 +141,9 @@ bool PressureDetection::incorrectAHUPressure(float ahu_low_pressure,
  * @return false If pressure is in range
  */
 bool PressureDetection::incorrectBoilerPressure(float boiler_low_pressure,
-                                                float boiler_high_pressure) {
+                    float boiler_high_pressure, float inspect.boiler_pressure) {
     // Calls detectBoilerPressure()
-    boiler_pressure = detectBoilerPressure();
+    // boiler_pressure = detectBoilerPressure();
     if ((boiler_pressure < boiler_low_pressure) || (
                                     boiler_pressure > boiler_high_pressure)) {
         return true;  // Out of range, incorrect pressure
@@ -162,9 +162,9 @@ bool PressureDetection::incorrectBoilerPressure(float boiler_low_pressure,
  * @return false If pressure is in range
  */
 bool PressureDetection::incorrectChillerPressure(float chiller_low_pressure,
-                                               float chiller_high_pressure) {
+            float chiller_high_pressure, float inspect.chiller_pressure) {
     // Calls detectChillerPressure()
-    chiller_pressure = detectChillerPressure();
+    // chiller_pressure = detectChillerPressure();
     if ((chiller_pressure < chiller_low_pressure) || (
                                     chiller_pressure > chiller_high_pressure)) {
         return true;  // Out of range, incorrect pressure
