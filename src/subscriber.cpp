@@ -8,9 +8,10 @@
 
 // #include "../include/PressureDetection.hpp"
 #include "enpm808x_inspection_robot/location.h"
-#include "enpm808x_inspection_robot/array.h"
+#include "enpm808x_inspection_robot/flag_array.h"
 
-void flaggedCallback(const enpm808x_inspection_robot::array::ConstPtr &msg) {
+void flaggedCallback(
+  const enpm808x_inspection_robot::flag_array::ConstPtr &msg) {
   ROS_INFO("STREAMMMMMM");
   ROS_INFO("%s", msg->id[0].check.c_str());
 }

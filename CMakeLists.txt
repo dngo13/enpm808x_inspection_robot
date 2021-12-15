@@ -62,8 +62,8 @@ add_message_files(
   FILES
   inspect.msg
   location.msg
-  flag_array.msg
   flag.msg
+  flag_array.msg
   )
 
 ## Generate services in the 'srv' folder
@@ -253,6 +253,6 @@ install(DIRECTORY launch models rviz worlds
 
 if (CATKIN_ENABLE_TESTING)
   find_package(rostest REQUIRED)
-  add_rostest_gtest(test_enpm808x_inspection_robot test/InspectionRobotTest.launch test/InspectionRobotTest.cpp)
+  add_rostest_gtest(test_enpm808x_inspection_robot launch/InspectionRobotTest.launch test/InspectionRobotTest.cpp)
   target_link_libraries(test_enpm808x_inspection_robot ${catkin_LIBRARIES})
 endif()

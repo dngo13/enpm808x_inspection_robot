@@ -30,34 +30,45 @@ SOFTWARE.
 #include "../include/robot.hpp"
 #include "../include/PressureDetection.hpp"
 #include "enpm808x_inspection_robot/location.h"
-#include "enpm808x_inspection_robot/flag_array.h"
-#include "enpm808x_inspection_robot/flag.h"
+#include <enpm808x_inspection_robot/flag_array.h>
+#include <enpm808x_inspection_robot/flag.h>
 
 
-// void arrayCallback(const enpm808x_inspection_robot::array::ConstPtr(msg)) {
-    // ROS_INFO("%f", msg->array.id[0].check.c_str());
-    // ROS_INFO("%f", msg->array.location.loc_y);
+int i = 1;  // global variable for pressure detection check
 
-    // if (loc_x == -3.0 || loc_y == -1.0)
+/**
+ * @brief Checks for the 
+ * 
+ * @param None
+ * @return false after making sure it reached the destination
+ */
 
+// void flaggedCallback(
+//     const enpm808x_inspection_robot::flag_array::ConstPtr &msg) {
+// //   ROS_INFO("%f", msg->loc[0].loc_x);
+//     ROS_INFO("%s", msg->id[0].check.c_str());
 
-void flaggedCallback(
-        const enpm808x_inspection_robot::flag_array::ConstPtr &msg) {
-//   ROS_INFO("%f", msg->loc[0].loc_x);
-    ROS_INFO("%s", msg->id[0].check.c_str());
+//     if (flag_array.id[0].check == "true") {
+//         if (i == 1) {
+//             // PressureDetection::detectChillerPressure();
+//             i = i + 1;
+//         }
+//     }
 
-    if (flag_array.id[0].check == "true") {
-        PressureDetection::detectChillerPressure();
-    }
+//     if (flag_array.id[0].check == "true") {
+//         if (i == 2) {
+//             // PressureDetection::detectBoilerPressure();
+//             i = i + 1;
+//         }
+//     }
 
-    if (flag_array.id[0].check == "true") {
-        PressureDetection::detectBoilerPressure();
-    }
-
-    if (flag_array.id[0].check == "true") {
-        PressureDetection::detectAHUPressure();
-    }
-}
+//     if (flag_array.id[0].check == "true") {
+//         if (i == 2) {
+//             // PressureDetection::detectAHUPressure();
+//             i = i + 1;
+//         }
+//     }
+// }
 
 Robot::Robot(ros::NodeHandle n) {
     ROS_INFO("Starting Inspection...");
@@ -65,6 +76,13 @@ Robot::Robot(ros::NodeHandle n) {
     lidar_data = n.subscribe < sensor_msgs::LaserScan
                                         > ("/scan", 10,
                                             &Robot::readLidar, this);
+
+    // ros::Subscriber robot_sub = n.subscribe("/flag", 1000, flaggedCallback);
+    // ros::spin();
+
+    // PressureDetection::detectChillerPressure();
+    // PressureDetection::detectBoilerPressure();
+    // PressureDetection::detectAHUPressure();
 }
 
 Robot::~Robot() {
@@ -91,9 +109,6 @@ void Robot::initiateRobot(ros::NodeHandle n,
         msg.angular.x = 0.0;
         msg.angular.y = 0.0;
         msg.angular.z = 0.0;
-
-        ros::Subscriber robot_sub = n.subscribe("flag", 1000, flaggedCallback);
-        ros::spin();
 
         // return 0;
     }

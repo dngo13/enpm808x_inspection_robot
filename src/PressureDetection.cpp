@@ -67,6 +67,12 @@ void pressureCallback(const enpm808x_inspection_robot::inspect &inspect) {
     ROS_INFO("Pressure of chiller: %f", inspect.chiller_pressure);
 }
 
+/**
+ * @brief Detects if AHU pressure is to be calculated after the bot reaches the equipment
+ * 
+ * @param None
+ * @return false after making sure it reached the destination
+ */
 bool PressureDetection::detectAHUPressure() {
     // ROS_INFO("Pressure of AHU: %f", inspect.ahu_pressure);
     if (incorrectAHUPressure(

@@ -63,7 +63,7 @@ pub = rospy.Publisher("cmd_vel", Twist, queue_size=1)
 # create another publisher for location
 # rospy.init_node('location_node') 
 # loc_pub = rospy.Publisher('location', array, queue_size=1) 
-loc_pub = rospy.Publisher('flag', flag_array, queue_size=1) 
+loc_pub = rospy.Publisher('/flag', flag_array, queue_size=1) 
 rate = rospy.Rate(1) 
 velocity_msg = Twist()
 rate = rospy.Rate(4)
@@ -76,7 +76,7 @@ distance_to_goal = 0.0
 # locations = location()
 flagged = flag()
 flagged_arrays = flag_array()
-flagged.check = 'false'
+flagged.check = "false"
 
 
 try:

@@ -74,6 +74,7 @@
   <build_export_depend>sensor_msgs</build_export_depend>
   <build_export_depend>tf</build_export_depend>
   <build_export_depend>gazebo_ros</build_export_depend> 
+  <build_export_depend>message_runtime</build_export_depend> 
 
   <exec_depend>roscpp</exec_depend>
   <exec_depend>rospy</exec_depend>
