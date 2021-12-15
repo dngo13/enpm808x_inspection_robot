@@ -75,6 +75,10 @@ roslaunch enpm808x_inspection_robot mechanical_inspection_world.launch
 ```
 rosrun enpm808x_inspection_robot explore.py
 ```
+to get if the locations are being subscribed correct-
+```
+rosrun enpm808x_inspection_robot subscriber
+```
 # Running the Pressure Detection 
 ```
 rosrun enpm808x_inspection_robot pressure_detector
