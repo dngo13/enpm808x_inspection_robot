@@ -29,6 +29,35 @@ SOFTWARE.
 #include "std_msgs/String.h"
 #include "../include/robot.hpp"
 #include "../include/PressureDetection.hpp"
+#include "enpm808x_inspection_robot/location.h"
+#include "enpm808x_inspection_robot/array.h"
+#include "enpm808x_inspection_robot/flag.h"
+
+
+void arrayCallback(const enpm808x_inspection_robot::array::ConstPtr(msg)) {
+    ROS_INFO("%f", msg->arrays.id[0].check.c_str());
+    // ROS_INFO("%f", msg->array.location.loc_y);
+
+    if (loc_x == -3.0 || loc_y == -1.0) {
+    if (array.id.check == true) {
+        PressureDetection::detectChillerPressure();
+    }
+
+    if (array.id.check == true) {
+        PressureDetection::detectBoilerPressure();
+    }
+
+    if (array.id.check == true) {
+        PressureDetection::detectAHUPressure();
+    }
+}
+
+void flaggedCallback(const enpm808x_inspection_robot::array::ConstPtr &msg) {
+    ROS_INFO("STREAMMMMMM");
+//   ROS_INFO("%f", msg->loc[0].loc_x);
+    ROS_INFO("%s", msg->id[0].check.c_str());
+
+}
 
 Robot::Robot(ros::NodeHandle n) {
     ROS_INFO("Starting Inspection...");
@@ -36,10 +65,13 @@ Robot::Robot(ros::NodeHandle n) {
     lidar_data = n.subscribe < sensor_msgs::LaserScan
                                         > ("/scan", 10,
                                             &Robot::readLidar, this);
+    ros::Subscriber robot_sub = n.subscribe("flag", 1000, flaggedCallback);
+    // need to check if callback is necessary
 }
 
 Robot::~Robot() {
 }
+
 
 void Robot::initiateRobot(ros::NodeHandle n,
                     ros::Publisher chatter_pub,
@@ -62,20 +94,9 @@ void Robot::initiateRobot(ros::NodeHandle n,
         msg.angular.y = 0.0;
         msg.angular.z = 0.0;
 
-        // move to location
-        if (((x_pos <= -5) || (x_pos >= -4)) || ((y_pos <= -3.5) || (y_pos >= -2.5))) {
-            PressureDetection::detectChillerPressure("true");
-        }
-        if (((x_pos <= -1) || (x_pos >= -2)) || ((y_pos <= -4.0) || (y_pos >= -5.0))) {
-            PressureDetection::detectBoilerPressure("true");
-        }
-        if ((x_pos >= 0) ||  (y_pos >= -1.5)) {
-            PressureDetection::detectAHUPressure("true");
-        }
     }
     // Publish the twist message to anyone listening
     chatter_pub.publish(msg);
-    // }
 }
 
 void Robot::stopRobot(ros::Publisher chatter_pub,
@@ -145,3 +166,5 @@ void Robot::readLidar(const sensor_msgs::LaserScan::ConstPtr &msg) {
         }
     }
 }
+
+

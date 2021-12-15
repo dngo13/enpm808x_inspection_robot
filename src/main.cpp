@@ -91,13 +91,5 @@ int main(int argc, char **argv) {
     loop_rate.sleep();
   }
 
-  // ros::spinOnce();
-
-
-  // ros::Duration(10).sleep();
-
-  // // start the turtlebot
-  // robot.initiateRobot(n, chatter_pub, loop_rate, robot.obstacle_detected);
-
   return 0;
 }

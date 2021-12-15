@@ -13,5 +13,5 @@ export PATH='/opt/ros/melodic/bin:/home/charu/.local/bin:/home/charu/.local/bin:
 export PKG_CONFIG_PATH="/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/lib/pkgconfig:$PKG_CONFIG_PATH"
 export PWD='/home/charu/catkin_ws/src/enpm808x_inspection_robot/build'
 export PYTHONPATH="/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/lib/python2.7/dist-packages:$PYTHONPATH"
-export ROSLISP_PACKAGE_DIRECTORIES="/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/share/common-lisp:$ROSLISP_PACKAGE_DIRECTORIES"
+export ROSLISP_PACKAGE_DIRECTORIES='/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/devel/share/common-lisp'
 export ROS_PACKAGE_PATH="/home/charu/catkin_ws/src/enpm808x_inspection_robot:$ROS_PACKAGE_PATH"

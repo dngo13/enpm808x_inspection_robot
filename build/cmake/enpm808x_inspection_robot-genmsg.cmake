@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.cmake.em
 
-message(STATUS "enpm808x_inspection_robot: 1 messages, 0 services")
+message(STATUS "enpm808x_inspection_robot: 4 messages, 0 services")
 
 set(MSG_I_FLAGS "-Ienpm808x_inspection_robot:/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg;-Istd_msgs:/opt/ros/melodic/share/std_msgs/cmake/../msg")
 
@@ -17,9 +17,24 @@ add_custom_target(enpm808x_inspection_robot_generate_messages ALL)
 
 
 
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg" NAME_WE)
+add_custom_target(_enpm808x_inspection_robot_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "enpm808x_inspection_robot" "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg" "enpm808x_inspection_robot/flag"
+)
+
 get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg" NAME_WE)
 add_custom_target(_enpm808x_inspection_robot_generate_messages_check_deps_${_filename}
   COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "enpm808x_inspection_robot" "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg" "std_msgs/Header"
+)
+
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg" NAME_WE)
+add_custom_target(_enpm808x_inspection_robot_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "enpm808x_inspection_robot" "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg" ""
+)
+
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg" NAME_WE)
+add_custom_target(_enpm808x_inspection_robot_generate_messages_check_deps_${_filename}
+  COMMAND ${CATKIN_ENV} ${PYTHON_EXECUTABLE} ${GENMSG_CHECK_DEPS_SCRIPT} "enpm808x_inspection_robot" "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg" ""
 )
 
 #
@@ -28,6 +43,24 @@ add_custom_target(_enpm808x_inspection_robot_generate_messages_check_deps_${_fil
 
 ### Section generating for lang: gencpp
 ### Generating Messages
+_generate_msg_cpp(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg"
+  "${MSG_I_FLAGS}"
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/enpm808x_inspection_robot
+)
+_generate_msg_cpp(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/enpm808x_inspection_robot
+)
+_generate_msg_cpp(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gencpp_INSTALL_DIR}/enpm808x_inspection_robot
+)
 _generate_msg_cpp(enpm808x_inspection_robot
   "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg"
   "${MSG_I_FLAGS}"
@@ -49,7 +82,13 @@ add_custom_target(enpm808x_inspection_robot_generate_messages_cpp
 add_dependencies(enpm808x_inspection_robot_generate_messages enpm808x_inspection_robot_generate_messages_cpp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_cpp _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_cpp _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_cpp _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg" NAME_WE)
 add_dependencies(enpm808x_inspection_robot_generate_messages_cpp _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -61,6 +100,24 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS enpm808x_inspection_robot_generate_
 
 ### Section generating for lang: geneus
 ### Generating Messages
+_generate_msg_eus(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg"
+  "${MSG_I_FLAGS}"
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/enpm808x_inspection_robot
+)
+_generate_msg_eus(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/enpm808x_inspection_robot
+)
+_generate_msg_eus(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${geneus_INSTALL_DIR}/enpm808x_inspection_robot
+)
 _generate_msg_eus(enpm808x_inspection_robot
   "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg"
   "${MSG_I_FLAGS}"
@@ -82,7 +139,13 @@ add_custom_target(enpm808x_inspection_robot_generate_messages_eus
 add_dependencies(enpm808x_inspection_robot_generate_messages enpm808x_inspection_robot_generate_messages_eus)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_eus _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_eus _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_eus _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg" NAME_WE)
 add_dependencies(enpm808x_inspection_robot_generate_messages_eus _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -94,6 +157,24 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS enpm808x_inspection_robot_generate_
 
 ### Section generating for lang: genlisp
 ### Generating Messages
+_generate_msg_lisp(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg"
+  "${MSG_I_FLAGS}"
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/enpm808x_inspection_robot
+)
+_generate_msg_lisp(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/enpm808x_inspection_robot
+)
+_generate_msg_lisp(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genlisp_INSTALL_DIR}/enpm808x_inspection_robot
+)
 _generate_msg_lisp(enpm808x_inspection_robot
   "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg"
   "${MSG_I_FLAGS}"
@@ -115,7 +196,13 @@ add_custom_target(enpm808x_inspection_robot_generate_messages_lisp
 add_dependencies(enpm808x_inspection_robot_generate_messages enpm808x_inspection_robot_generate_messages_lisp)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_lisp _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_lisp _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_lisp _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg" NAME_WE)
 add_dependencies(enpm808x_inspection_robot_generate_messages_lisp _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -127,6 +214,24 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS enpm808x_inspection_robot_generate_
 
 ### Section generating for lang: gennodejs
 ### Generating Messages
+_generate_msg_nodejs(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg"
+  "${MSG_I_FLAGS}"
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/enpm808x_inspection_robot
+)
+_generate_msg_nodejs(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/enpm808x_inspection_robot
+)
+_generate_msg_nodejs(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${gennodejs_INSTALL_DIR}/enpm808x_inspection_robot
+)
 _generate_msg_nodejs(enpm808x_inspection_robot
   "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg"
   "${MSG_I_FLAGS}"
@@ -148,7 +253,13 @@ add_custom_target(enpm808x_inspection_robot_generate_messages_nodejs
 add_dependencies(enpm808x_inspection_robot_generate_messages enpm808x_inspection_robot_generate_messages_nodejs)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_nodejs _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_nodejs _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_nodejs _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg" NAME_WE)
 add_dependencies(enpm808x_inspection_robot_generate_messages_nodejs _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility
@@ -160,6 +271,24 @@ list(APPEND ${PROJECT_NAME}_EXPORTED_TARGETS enpm808x_inspection_robot_generate_
 
 ### Section generating for lang: genpy
 ### Generating Messages
+_generate_msg_py(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg"
+  "${MSG_I_FLAGS}"
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/enpm808x_inspection_robot
+)
+_generate_msg_py(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/enpm808x_inspection_robot
+)
+_generate_msg_py(enpm808x_inspection_robot
+  "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+  "${MSG_I_FLAGS}"
+  ""
+  ${CATKIN_DEVEL_PREFIX}/${genpy_INSTALL_DIR}/enpm808x_inspection_robot
+)
 _generate_msg_py(enpm808x_inspection_robot
   "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg"
   "${MSG_I_FLAGS}"
@@ -181,7 +310,13 @@ add_custom_target(enpm808x_inspection_robot_generate_messages_py
 add_dependencies(enpm808x_inspection_robot_generate_messages enpm808x_inspection_robot_generate_messages_py)
 
 # add dependencies to all check dependencies targets
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_py _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
 get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_py _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg" NAME_WE)
+add_dependencies(enpm808x_inspection_robot_generate_messages_py _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
+get_filename_component(_filename "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg" NAME_WE)
 add_dependencies(enpm808x_inspection_robot_generate_messages_py _enpm808x_inspection_robot_generate_messages_check_deps_${_filename})
 
 # target for backward compatibility

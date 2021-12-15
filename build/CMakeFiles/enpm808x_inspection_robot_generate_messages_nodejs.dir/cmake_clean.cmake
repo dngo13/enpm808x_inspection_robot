@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/enpm808x_inspection_robot_generate_messages_nodejs"
+  "devel/share/gennodejs/ros/enpm808x_inspection_robot/msg/array.js"
+  "devel/share/gennodejs/ros/enpm808x_inspection_robot/msg/location.js"
+  "devel/share/gennodejs/ros/enpm808x_inspection_robot/msg/flag.js"
   "devel/share/gennodejs/ros/enpm808x_inspection_robot/msg/inspect.js"
 )
 

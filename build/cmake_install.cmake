@@ -129,7 +129,12 @@ file(INSTALL DESTINATION "/usr/local" TYPE FILE FILES "/home/charu/catkin_ws/src
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enpm808x_inspection_robot/msg" TYPE FILE FILES "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/enpm808x_inspection_robot/msg" TYPE FILE FILES
+    "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg"
+    "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg"
+    "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg"
+    "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
+    )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)

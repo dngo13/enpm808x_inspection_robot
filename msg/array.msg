@@ -1,1 +1,1 @@
-location[] loc
+flag[] id

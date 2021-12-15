@@ -52,21 +52,20 @@ class PressureDetection {
 
  public:
     // Constructor
-    explicit PressureDetection();
+    PressureDetection();
     // Destructor
     ~PressureDetection();
     void pressureCallback(const sensor_msgs::FluidPressure::ConstPtr& msg);
     // Methods for pressure detection for each unit
-    float detectAHUPressure();
-    float detectBoilerPressure();
-    float detectChillerPressure();
+    bool detectAHUPressure();
+    bool detectBoilerPressure();
+    bool detectChillerPressure();
     // Methods to check range of pressure for each unit
     bool incorrectAHUPressure(float ahu_low_pressure, float ahu_high_pressure);
     bool incorrectBoilerPressure(float boiler_low_pressure,
-                                             float boiler_high_pressure);
+                                                   float boiler_high_pressure);
     bool incorrectChillerPressure(float chiller_low_pressure,
                                              float chiller_high_pressure);
-
 };
 
 #endif  // PRESSURE_DETECTION_HPP_

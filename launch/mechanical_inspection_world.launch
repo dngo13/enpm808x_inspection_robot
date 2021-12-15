@@ -1,4 +1,10 @@
 <launch>
+
+  <arg name = "freq" default = '2' />
+  <arg name="rosBagEnable" 
+      default="false" 
+      doc="rosBagEnable"/>
+
   <arg name="model" default="burger"/>
   <arg name="x_pos" default="-5.0"/>
   <arg name="y_pos" default="-3.0"/>
@@ -21,5 +27,12 @@
 
   <node pkg="gazebo_ros" type="spawn_model" name="spawn_urdf"  args="-urdf -model turtlebot3_$(arg model) -x $(arg x_pos) -y $(arg y_pos) -z $(arg z_pos) -param robot_description" />
 
-	<node pkg="enpm808x_inspection_robot" name="robot" type="robot" output = "screen"></node>
+	<!-- <node pkg="enpm808x_inspection_robot" name="robot" type="robot" output = "screen"></node> -->
+
+  <node name="record_talker"
+      pkg="rosbag"
+      type="record"
+      args="-a -O $(find enpm808x_inspection_robot)/results/rosbag"
+      if="$(arg rosBagEnable)" />
+
 </launch>

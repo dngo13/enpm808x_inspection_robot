@@ -1,6 +1,6 @@
 # generated from genmsg/cmake/pkg-genmsg.context.in
 
-messages_str = "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg"
+messages_str = "/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/inspect.msg;/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/location.msg;/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/array.msg;/home/charu/catkin_ws/src/enpm808x_inspection_robot/msg/flag.msg"
 services_str = ""
 pkg_name = "enpm808x_inspection_robot"
 dependencies_str = "std_msgs"

@@ -1,5 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/enpm808x_inspection_robot_generate_messages_py"
+  "devel/lib/python2.7/dist-packages/enpm808x_inspection_robot/msg/_array.py"
+  "devel/lib/python2.7/dist-packages/enpm808x_inspection_robot/msg/_location.py"
+  "devel/lib/python2.7/dist-packages/enpm808x_inspection_robot/msg/_flag.py"
   "devel/lib/python2.7/dist-packages/enpm808x_inspection_robot/msg/_inspect.py"
   "devel/lib/python2.7/dist-packages/enpm808x_inspection_robot/msg/__init__.py"
 )

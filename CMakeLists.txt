@@ -61,7 +61,10 @@ find_package(gazebo REQUIRED)
 add_message_files(
   FILES
   inspect.msg
-)
+  location.msg
+  array.msg
+  flag.msg
+  )
 
 ## Generate services in the 'srv' folder
 # add_service_files(
@@ -114,10 +117,9 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
  INCLUDE_DIRS include
- CATKIN_DEPENDS roscpp std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros message_runtime
+ CATKIN_DEPENDS roscpp rospy std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros message_runtime message_generation
   DEPENDS GAZEBO
 #  LIBRARIES enpm808x_inspection_robot
-  CATKIN_DEPENDS message_generation message_runtime roscpp rospy std_msgs tf
 #  DEPENDS system_lib
 )
 
@@ -150,11 +152,8 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 add_executable(robot src/main.cpp src/robot.cpp)
 add_executable(pressure_detector src/PressureDetection.cpp)
+# add_executable(move_robot src/explore.py)
 # add_executable(robot src/main.cpp src/robot.cpp src/PressureDetection.cpp)
-add_executable(tf_broadcaster src/tf_broadcaster.cpp)
-add_executable(tf_listener src/tf_listener.cpp)
-add_executable(odometry_publisher src/tf_listener.cpp)
-add_executable(laser_scan_publisher src/LaserScan.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -170,23 +169,21 @@ add_executable(laser_scan_publisher src/LaserScan.cpp)
 target_link_libraries(robot
   ${catkin_LIBRARIES}
 )
-target_link_libraries(tf_broadcaster 
+target_link_libraries(pressure_detector
 ${catkin_LIBRARIES}
 )
-target_link_libraries(tf_listener 
-${catkin_LIBRARIES}
-)
-target_link_libraries(odometry_publisher 
-${catkin_LIBRARIES}
-)
-target_link_libraries(laser_scan_publisher 
-${catkin_LIBRARIES}
-)
-target_link_libraries(pressure_detector 
-${catkin_LIBRARIES}
-)
+# target_link_libraries(move_robot 
+# ${catkin_LIBRARIES}
+# )
+
+add_executable(subscriber src/subscriber.cpp)
+add_dependencies(subscriber ${cpp_python_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(subscriber
+   ${catkin_LIBRARIES}
+ )
 
 add_dependencies(pressure_detector enpm808x_inspection_robot_generate_messages_cpp)
+add_dependencies(robot enpm808x_inspection_robot_generate_messages_cpp)
 
 #############
 ## Install ##
