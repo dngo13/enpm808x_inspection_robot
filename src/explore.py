@@ -53,7 +53,7 @@ import tf
 from geometry_msgs.msg import Twist, Point
 from sensor_msgs.msg import LaserScan
 from tf.transformations import euler_from_quaternion
-from enpm808x_inspection_robot.msg import location, array, flag
+from enpm808x_inspection_robot.msg import location, flag_array, flag
 
 
 rospy.init_node("move_robot")
@@ -63,7 +63,7 @@ pub = rospy.Publisher("cmd_vel", Twist, queue_size=1)
 # create another publisher for location
 # rospy.init_node('location_node') 
 # loc_pub = rospy.Publisher('location', array, queue_size=1) 
-loc_pub = rospy.Publisher('flag', array, queue_size=1) 
+loc_pub = rospy.Publisher('flag', flag_array, queue_size=1) 
 rate = rospy.Rate(1) 
 velocity_msg = Twist()
 rate = rospy.Rate(4)
@@ -75,7 +75,7 @@ k_v_gain = 1
 distance_to_goal = 0.0
 # locations = location()
 flagged = flag()
-arrays = array()
+flagged_arrays = flag_array()
 flagged.check = 'false'
 
 
@@ -184,12 +184,13 @@ if __name__ == "__main__":
     go_to_goal(1, 3)
     print("The robot has reached the Air Handling Units")
     print("Commencing the pressure Detection")
-    # locations.loc_x = 1.0
-    # locations.loc_y = 3.0
     # send message to AHU
 
+
+        # arrays.id.insert(0,flag)
     while not rospy.is_shutdown():
-        loc_pub.publish(arrays.id)
+        loc_pub.publish(flagged_arrays.id)
+        flagged_arrays.id.insert(0,flagged)
         rate.sleep()
 
     exit()

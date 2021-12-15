@@ -30,33 +30,33 @@ SOFTWARE.
 #include "../include/robot.hpp"
 #include "../include/PressureDetection.hpp"
 #include "enpm808x_inspection_robot/location.h"
-#include "enpm808x_inspection_robot/array.h"
+#include "enpm808x_inspection_robot/flag_array.h"
 #include "enpm808x_inspection_robot/flag.h"
 
 
-void arrayCallback(const enpm808x_inspection_robot::array::ConstPtr(msg)) {
-    ROS_INFO("%f", msg->arrays.id[0].check.c_str());
+// void arrayCallback(const enpm808x_inspection_robot::array::ConstPtr(msg)) {
+    // ROS_INFO("%f", msg->array.id[0].check.c_str());
     // ROS_INFO("%f", msg->array.location.loc_y);
 
-    if (loc_x == -3.0 || loc_y == -1.0) {
-    if (array.id.check == true) {
-        PressureDetection::detectChillerPressure();
-    }
+    // if (loc_x == -3.0 || loc_y == -1.0)
 
-    if (array.id.check == true) {
-        PressureDetection::detectBoilerPressure();
-    }
 
-    if (array.id.check == true) {
-        PressureDetection::detectAHUPressure();
-    }
-}
-
-void flaggedCallback(const enpm808x_inspection_robot::array::ConstPtr &msg) {
-    ROS_INFO("STREAMMMMMM");
+void flaggedCallback(
+        const enpm808x_inspection_robot::flag_array::ConstPtr &msg) {
 //   ROS_INFO("%f", msg->loc[0].loc_x);
     ROS_INFO("%s", msg->id[0].check.c_str());
 
+    if (flag_array.id[0].check == "true") {
+        PressureDetection::detectChillerPressure();
+    }
+
+    if (flag_array.id[0].check == "true") {
+        PressureDetection::detectBoilerPressure();
+    }
+
+    if (flag_array.id[0].check == "true") {
+        PressureDetection::detectAHUPressure();
+    }
 }
 
 Robot::Robot(ros::NodeHandle n) {
@@ -65,8 +65,6 @@ Robot::Robot(ros::NodeHandle n) {
     lidar_data = n.subscribe < sensor_msgs::LaserScan
                                         > ("/scan", 10,
                                             &Robot::readLidar, this);
-    ros::Subscriber robot_sub = n.subscribe("flag", 1000, flaggedCallback);
-    // need to check if callback is necessary
 }
 
 Robot::~Robot() {
@@ -94,6 +92,10 @@ void Robot::initiateRobot(ros::NodeHandle n,
         msg.angular.y = 0.0;
         msg.angular.z = 0.0;
 
+        ros::Subscriber robot_sub = n.subscribe("flag", 1000, flaggedCallback);
+        ros::spin();
+
+        // return 0;
     }
     // Publish the twist message to anyone listening
     chatter_pub.publish(msg);

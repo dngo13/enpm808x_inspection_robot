@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/enpm808x_inspection_robot_generate_messages_eus"
-  "devel/share/roseus/ros/enpm808x_inspection_robot/msg/array.l"
-  "devel/share/roseus/ros/enpm808x_inspection_robot/msg/location.l"
   "devel/share/roseus/ros/enpm808x_inspection_robot/msg/flag.l"
+  "devel/share/roseus/ros/enpm808x_inspection_robot/msg/location.l"
+  "devel/share/roseus/ros/enpm808x_inspection_robot/msg/flag_array.l"
   "devel/share/roseus/ros/enpm808x_inspection_robot/msg/inspect.l"
   "devel/share/roseus/ros/enpm808x_inspection_robot/manifest.l"
 )

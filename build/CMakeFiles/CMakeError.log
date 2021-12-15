@@ -1,22 +1,22 @@
 Determining if the pthread_create exist failed with the following output:
 Change Dir: /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_6a041/fast"
-/usr/bin/make -f CMakeFiles/cmTC_6a041.dir/build.make CMakeFiles/cmTC_6a041.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_43622/fast"
+/usr/bin/make -f CMakeFiles/cmTC_43622.dir/build.make CMakeFiles/cmTC_43622.dir/build
 make[1]: Entering directory '/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_6a041.dir/CheckSymbolExists.c.o
-/usr/bin/x86_64-linux-gnu-gcc-7    -o CMakeFiles/cmTC_6a041.dir/CheckSymbolExists.c.o   -c /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
-Linking C executable cmTC_6a041
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_6a041.dir/link.txt --verbose=1
-/usr/bin/x86_64-linux-gnu-gcc-7      -rdynamic CMakeFiles/cmTC_6a041.dir/CheckSymbolExists.c.o  -o cmTC_6a041 
-CMakeFiles/cmTC_6a041.dir/CheckSymbolExists.c.o: In function `main':
+Building C object CMakeFiles/cmTC_43622.dir/CheckSymbolExists.c.o
+/usr/bin/x86_64-linux-gnu-gcc-7    -o CMakeFiles/cmTC_43622.dir/CheckSymbolExists.c.o   -c /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTC_43622
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_43622.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc-7      -rdynamic CMakeFiles/cmTC_43622.dir/CheckSymbolExists.c.o  -o cmTC_43622 
+CMakeFiles/cmTC_43622.dir/CheckSymbolExists.c.o: In function `main':
 CheckSymbolExists.c:(.text+0x1b): undefined reference to `pthread_create'
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_6a041.dir/build.make:97: recipe for target 'cmTC_6a041' failed
-make[1]: *** [cmTC_6a041] Error 1
+CMakeFiles/cmTC_43622.dir/build.make:97: recipe for target 'cmTC_43622' failed
+make[1]: *** [cmTC_43622] Error 1
 make[1]: Leaving directory '/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_6a041/fast' failed
-make: *** [cmTC_6a041/fast] Error 2
+Makefile:126: recipe for target 'cmTC_43622/fast' failed
+make: *** [cmTC_43622/fast] Error 2
 
 File /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
 /* */
@@ -36,20 +36,20 @@ int main(int argc, char** argv)
 Determining if the function pthread_create exists in the pthreads failed with the following output:
 Change Dir: /home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/CMakeTmp
 
-Run Build Command:"/usr/bin/make" "cmTC_967cd/fast"
-/usr/bin/make -f CMakeFiles/cmTC_967cd.dir/build.make CMakeFiles/cmTC_967cd.dir/build
+Run Build Command:"/usr/bin/make" "cmTC_35122/fast"
+/usr/bin/make -f CMakeFiles/cmTC_35122.dir/build.make CMakeFiles/cmTC_35122.dir/build
 make[1]: Entering directory '/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/CMakeTmp'
-Building C object CMakeFiles/cmTC_967cd.dir/CheckFunctionExists.c.o
-/usr/bin/x86_64-linux-gnu-gcc-7   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_967cd.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
-Linking C executable cmTC_967cd
-/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_967cd.dir/link.txt --verbose=1
-/usr/bin/x86_64-linux-gnu-gcc-7  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_967cd.dir/CheckFunctionExists.c.o  -o cmTC_967cd -lpthreads 
+Building C object CMakeFiles/cmTC_35122.dir/CheckFunctionExists.c.o
+/usr/bin/x86_64-linux-gnu-gcc-7   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTC_35122.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-3.10/Modules/CheckFunctionExists.c
+Linking C executable cmTC_35122
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTC_35122.dir/link.txt --verbose=1
+/usr/bin/x86_64-linux-gnu-gcc-7  -DCHECK_FUNCTION_EXISTS=pthread_create    -rdynamic CMakeFiles/cmTC_35122.dir/CheckFunctionExists.c.o  -o cmTC_35122 -lpthreads 
 /usr/bin/ld: cannot find -lpthreads
 collect2: error: ld returned 1 exit status
-CMakeFiles/cmTC_967cd.dir/build.make:97: recipe for target 'cmTC_967cd' failed
-make[1]: *** [cmTC_967cd] Error 1
+CMakeFiles/cmTC_35122.dir/build.make:97: recipe for target 'cmTC_35122' failed
+make[1]: *** [cmTC_35122] Error 1
 make[1]: Leaving directory '/home/charu/catkin_ws/src/enpm808x_inspection_robot/build/CMakeFiles/CMakeTmp'
-Makefile:126: recipe for target 'cmTC_967cd/fast' failed
-make: *** [cmTC_967cd/fast] Error 2
+Makefile:126: recipe for target 'cmTC_35122/fast' failed
+make: *** [cmTC_35122/fast] Error 2
 
 

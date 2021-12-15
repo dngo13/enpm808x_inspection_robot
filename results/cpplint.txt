@@ -1,0 +1,63 @@
+./PressureDetection.cpp:70:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+./PressureDetection.cpp:25:  catkin_ws/PressureDetection.cpp should include its header file catkin_ws/PressureDetection.hpp. Relative paths like . and .. are not allowed.  [build/include] [5]
+./PressureDetection.hpp:55:  Zero-parameter constructors should not be marked explicit.  [runtime/explicit] [5]
+./PressureDetection.hpp:69:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+./PressureDetection.hpp:72:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
+./extra/PointCloud.cpp:86:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
+./extra/local_planner.cpp:90:  Redundant blank line at the end of a code block should be deleted.  [whitespace/blank_line] [3]
+./extra/local_planner.cpp:100:  Namespace should be terminated with "// namespace local_planner"  [readability/namespace] [5]
+./extra/local_planner.cpp:48:  catkin_ws/extra/local_planner.cpp should include its header file catkin_ws/extra/local_planner.hpp  [build/include] [5]
+./extra/local_planner.hpp:25:  #ifndef header guard has wrong style, please use: CATKIN_WS_EXTRA_LOCAL_PLANNER_HPP_  [build/header_guard] [5]
+./extra/local_planner.hpp:63:  #endif line should be "#endif  // CATKIN_WS_EXTRA_LOCAL_PLANNER_HPP_"  [build/header_guard] [5]
+./extra/local_planner.hpp:33:  Found C system header after C++ system header. Should be: local_planner.h, c system, c++ system, other.  [build/include_order] [4]
+./extra/local_planner.hpp:55:  Is this a non-const reference? If so, make const or use a pointer: geometry_msgs::Twist& cmd_vel  [runtime/references] [2]
+./extra/tf_broadcaster.cpp:68:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
+./extra/tf_listener.cpp:70:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./extra/tf_listener.cpp:93:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:0:  No copyright message found.  You should have a line: "Copyright [year] <Copyright Owner>"  [legal/copyright] [5]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:36:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:82:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:87:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:163:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:178:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:215:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:324:  Lines should be <= 80 characters long  [whitespace/line_length] [2]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:482:  Missing space after ,  [whitespace/comma] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:487:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:493:  Missing space after ,  [whitespace/comma] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:500:  Missing space after ,  [whitespace/comma] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:501:  Missing space after ,  [whitespace/comma] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:502:  Missing space after ,  [whitespace/comma] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:509:  Missing space after ,  [whitespace/comma] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:514:  Weird number of spaces at line-start.  Are you using a 2-space indent?  [whitespace/indent] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:520:  Missing space after ,  [whitespace/comma] [3]
+./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp:554:  { should almost always be at the end of the previous line  [whitespace/braces] [4]
+./src/enpm808x_inspection_robot/test/InspectionRobotTest.cpp:84:  Could not find a newline character at the end of the file.  [whitespace/ending_newline] [5]
+Skipping input './turtlebot': Can't open for reading
+Skipping input './turtlebot': Can't open for reading
+Skipping input './turtlebot': Can't open for reading
+Skipping input './turtlebot': Can't open for reading
+Skipping input './turtlebot': Can't open for reading
+Skipping input 'gits/turtlebot3/turtlebot3_bringup/src/turtlebot3_diagnostics.cpp': Can't open for reading
+Skipping input 'gits/turtlebot3/turtlebot3_slam/src/flat_world_imu_node.cpp': Can't open for reading
+Skipping input 'gits/turtlebot3_simulations/turtlebot3_fake/src/turtlebot3_fake.cpp': Can't open for reading
+Skipping input 'gits/turtlebot3_simulations/turtlebot3_gazebo/src/turtlebot3_drive.cpp': Can't open for reading
+Skipping input 'gits/turtlebot_interactions/turtlebot_interactive_markers/src/turtlebot_marker_server.cpp': Can't open for reading
+Done processing ./PressureDetection.cpp
+Done processing ./PressureDetection.hpp
+Done processing ./extra/LaserScan.cpp
+Done processing ./extra/PointCloud.cpp
+Done processing ./extra/local_planner.cpp
+Done processing ./extra/local_planner.hpp
+Done processing ./extra/odometry.cpp
+Done processing ./extra/tf_broadcaster.cpp
+Done processing ./extra/tf_listener.cpp
+Done processing ./src/enpm808x_inspection_robot/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp
+Done processing ./src/enpm808x_inspection_robot/include/PressureDetection.hpp
+Done processing ./src/enpm808x_inspection_robot/include/robot.hpp
+Done processing ./src/enpm808x_inspection_robot/src/PressureDetection.cpp
+Done processing ./src/enpm808x_inspection_robot/src/main.cpp
+Done processing ./src/enpm808x_inspection_robot/src/robot.cpp
+Done processing ./src/enpm808x_inspection_robot/src/subscriber.cpp
+Done processing ./src/enpm808x_inspection_robot/test/InspectionRobotTest.cpp
+Total errors found: 35

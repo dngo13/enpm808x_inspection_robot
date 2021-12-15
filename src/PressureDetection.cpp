@@ -49,7 +49,6 @@ PressureDetection::PressureDetection() {
     ros::NodeHandle nh;
 
     ROS_INFO_STREAM("Pressure Detection");
-
 }
 
 PressureDetection::~PressureDetection() {

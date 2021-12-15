@@ -1,8 +1,8 @@
 file(REMOVE_RECURSE
   "CMakeFiles/enpm808x_inspection_robot_generate_messages_lisp"
-  "devel/share/common-lisp/ros/enpm808x_inspection_robot/msg/array.lisp"
-  "devel/share/common-lisp/ros/enpm808x_inspection_robot/msg/location.lisp"
   "devel/share/common-lisp/ros/enpm808x_inspection_robot/msg/flag.lisp"
+  "devel/share/common-lisp/ros/enpm808x_inspection_robot/msg/location.lisp"
+  "devel/share/common-lisp/ros/enpm808x_inspection_robot/msg/flag_array.lisp"
   "devel/share/common-lisp/ros/enpm808x_inspection_robot/msg/inspect.lisp"
 )
 

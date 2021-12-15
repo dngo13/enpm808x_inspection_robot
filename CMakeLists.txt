@@ -62,7 +62,7 @@ add_message_files(
   FILES
   inspect.msg
   location.msg
-  array.msg
+  flag_array.msg
   flag.msg
   )
 
@@ -118,7 +118,7 @@ generate_messages(
 catkin_package(
  INCLUDE_DIRS include
  CATKIN_DEPENDS roscpp rospy std_msgs sensor_msgs geometry_msgs nav_msgs tf gazebo_ros message_runtime message_generation
-  DEPENDS GAZEBO
+ DEPENDS GAZEBO
 #  LIBRARIES enpm808x_inspection_robot
 #  DEPENDS system_lib
 )
