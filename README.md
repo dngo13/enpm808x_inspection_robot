@@ -38,6 +38,21 @@ cd ../..
 catkin_make
 source devel/setup.bash
 ```
+# Turtlebot3 installation:
+Follow the instructions to install the Turtlebot3 ROS package 
+```
+cd ~/catkin_ws/src
+git clone https://github.com/ROBOTIS-GIT/turtlebot3_msgs.git
+git clone https://github.com/ROBOTIS-GIT/turtlebot3.git
+git clone https://github.com/ROBOTIS-GIT/turtlebot3_simulations.git
+cd ~/catkin_ws/
+catkin_make
+source devel/setup.bash
+```
+Kill the existiing Gazebo servers
+```
+killall gzserver
+```
 
 # Updating bashrc 
 Please run this command on terminal to make sure bashrc is updated with the gazebo model locations.
@@ -80,6 +95,7 @@ rosrun enpm808x_inspection_robot explore.py
 rosrun enpm808x_inspection_robot pressure_detector
 ```
 # Checking the accuracy of the bot navigation
+Robot clas to to avoid the obstacles and to make sure the pressure detection class is triggered. Currently that feature is disabled/not active. 
 Open two tabs and in each paste the following
 ```
 roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch 
@@ -87,7 +103,14 @@ roslaunch turtlebot3_gazebo turtlebot3_empty_world.launch
 ```
 rosrun enpm808x_inspection_robot explore.py
 ```
-
+# Checking the accuracy of the bot obstacle avoidance
+Open two tabs and in each paste the following
+```
+roslaunch turtlebot3_gazebo turtlebot3_world.launch 
+```
+```
+rosrun enpm808x_inspection_robot robot
+```
 # Resources
 Below are links to the free 3D Models we used for our Gazebo Simulation. Gazebo can read Collada mesh files.
 Models are from the free website https://3dwarehouse.sketchup.com/ 
